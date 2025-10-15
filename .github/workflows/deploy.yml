@@ -26,12 +26,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./
-          include: |
-            **/*
-          exclude: |
-            .git/**
-            .gitignore
-            .DS_Store
-            node_modules/**
-            README.md
-          log-level: minimal
