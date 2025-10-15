@@ -8,11 +8,10 @@ export function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid  gap-12 items-center">
           <div>
-            <p className="text-2xl tracking-widest text-neutral-600 mb-4 text-center font-serif">Niel Academy</p>
-            <h1 className="text-9xl md:text-7xl font-bold text-neutral-900 mb-6 leading-tight font-sans text-center">
-              Your education that puts 
-              <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif"> mastery</span> at the frontier
-            <p className="text-neutral-700 text-lg mb-8  leading-relaxed text-cente font-serif font-light">
+            <p className="text-2xl tracking-widest text-neutral-600 mb-4 text-center font-light font-serif">Niel Academy</p>
+            <h1 className="lg:text-8xl md:text-7xl sm:text-6xl text-neutral-900 mb-6 leading-tight text-center font-roboto-bold">
+            Built for <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">Cameroonian Students.</span> Powered by <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">AI</span>.
+            <p className="text-neutral-700 text-lg mb-8  leading-relaxed text-center font-serif font-stretch-condensed font-light">
               Comprehensive examination papers, intelligent AI tutoring, and personalized learning experiences. 
               Built for students who demand excellence.
             </p>
@@ -26,7 +25,7 @@ export function Home() {
         <Card className="text-center mb-12 min-h-[400px] flex rounded-4xl flex-row bg-brand-card justify-center">
           <div className="text-neutral-700 text-lg max-w-3xl mx-auto font-serif w-1/2 flex  p-8">
             <div>
-              <h3 className="text-5xl font-bold text-neutral-900 mb-4 text-left font-sans">Large content library available for free</h3>
+              <h3 className="text-5xl font-bold text-neutral-900 mb-4 text-left font-roboto-semibold">Large content library available for free</h3>
               <p className="text-black text-2xl leading-relaxed text-left font-serif font-regular">
                 Access thousands of past examination papers from various educational boards, 
                 organized by country, institution, and academic year. Find exactly what you need 
@@ -34,12 +33,36 @@ export function Home() {
               </p>
             </div>
           </div>
-          <div className="font-bold text-neutral-900 mb-4 w-1/2 min-h-[400px] flex items-center justify-center">
-            <img 
-              src="/images/library.jpg" 
-              alt="Library Screenshot" 
-              className="w-full h-full object-cover  rounded-2xl mr-4 pr-2"
-            />
+          <div className="font-bold text-neutral-900 mb-4 w-1/2 min-h-[400px] flex flex-col justify-center p-8">
+            <div className="space-y-4">
+              <div className="flex justify-between items-center py-3 border-b border-black cursor-pointer transition-colors">
+                <div>
+                  <h5 className="font-medium text-black font-roboto-bold">GCE Ordinary Level (O-Level)</h5>
+                  <p className="text-sm text-black font-serif font-light text-left">Form 5 completion examination</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-center py-3 border-b border-black cursor-pointer transition-colors">
+                <div>
+                  <h5 className="font-medium text-black font-roboto-bold">GCE Advanced Level (A-Level)</h5>
+                  <p className="text-sm text-black font-serif font-light text-left">Upper Sixth Form examination</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-center py-3 border-b border-black cursor-pointer transition-colors">
+                <div>
+                  <h5 className="font-medium text-black font-roboto-bold">TVEE Intermediate Level</h5>
+                  <p className="text-sm text-black font-serif font-light text-left">Technical & Vocational Education</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-center py-3 cursor-pointer transition-colors">
+                <div>
+                  <h5 className="font-medium text-black font-roboto-bold">TVEE Advanced Level</h5>
+                  <p className="text-sm text-black font-serif font-light text-left">Advanced Technical & Vocational</p>
+                </div>
+              </div>
+            </div>
           </div>
         </Card>
 
@@ -52,7 +75,7 @@ export function Home() {
             </div>
             <h3 className="text-xl font-semibold text-neutral-900 mb-3">Comprehensive Paper Library</h3>
             <p className="text-neutral-600 text-sm leading-relaxed">
-              Access thousands of past examination papers from various educational boards, organized by country, 
+              Access past examination papers from various educational boards, organized by country, 
               institution, and academic year.
             </p>
           </div>
@@ -98,7 +121,7 @@ export function Home() {
               <Button className="bg-neutral-900 text-white hover:bg-neutral-800">
                 Try Niel AI
               </Button>
-            </div>
+            </div>African
             
             <div className="space-y-4">
               <div className="flex justify-between items-center py-4 border-b border-neutral-200">
