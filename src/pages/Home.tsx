@@ -1,6 +1,3 @@
-import { Card } from '@/components/ui/card';
-import { Button } from '../components/ui/button';
-
 export function Home() {
   return (
     <div className="flex-1 w-full h-full">
