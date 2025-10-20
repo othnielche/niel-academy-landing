@@ -85,6 +85,21 @@ export function Header() {
                   : 'scale-x-0 group-hover:scale-x-100'
               }`}></span>
             </Link>
+            <Link
+              to="/privacy-policy"
+              className={`px-3 py-2 text-sm font-medium relative group transition-colors duration-300 ${
+                isActive('/privacy-policy') 
+                  ? 'text-black' 
+                  : 'text-neutral-600 hover:text-black'
+              }`}
+            >
+              Privacy Policy
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300 ease-in-out ${
+                isActive('/privacy-policy') 
+                  ? 'scale-x-100' 
+                  : 'scale-x-0 group-hover:scale-x-100'
+              }`}></span>
+            </Link>
           </nav>
 
           {/* Mobile Menu */}
@@ -139,6 +154,16 @@ export function Header() {
                     }`}
                   >
                     Contact
+                  </Link>
+                  <Link
+                    to="/privacy-policy"
+                    className={`px-4 py-4 text-lg font-medium rounded-lg transition-colors duration-300 ${
+                      isActive('/privacy-policy') 
+                        ? 'text-black font-roboto-semibold' 
+                        : 'text-neutral-600 hover:text-black font-roboto-regular'
+                    }`}
+                  >
+                    Privacy Policy
                   </Link>
                 </nav>
                 <div className="w-full mt-8 pt-6 border-t border-neutral-200">
