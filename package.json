@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node build-htaccess.js",
+    "build:deploy": "tsc -b && vite build && node build-htaccess.js && echo 'Ready for deployment! Upload the dist/ folder contents to your web server.'",
     "lint": "eslint .",
     "preview": "vite preview"
   },
