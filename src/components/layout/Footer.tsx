@@ -10,7 +10,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 font-sans">Socials</h3>
             <div className="flex flex-col space-y-3">
               <a 
-                href="https://www.linkedin.com/in/othniel-che" 
+                href="https://www.linkedin.com/company/niel-academy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-neutral-300 hover:text-white transition-colors"
