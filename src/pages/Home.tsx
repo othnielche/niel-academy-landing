@@ -1,12 +1,13 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { BookOpen, DollarSign, Lightbulb, Smartphone, Sparkles, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
     <div className="flex-1 w-full h-full">
       {/* Hero Section - flat, two-column */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-20 pt-12">
-        <div className="grid  gap-12 items-center">
+        <div className="grid  gap-8 items-center">
           <div>
             <h1 className="lg:text-8xl md:text-7xl sm:text-6xl text-neutral-900 mb-6 leading-tight text-center font-roboto-bold">
             Built for <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">Cameroonian Students.</span> Powered by <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">AI</span>.
@@ -15,6 +16,11 @@ export function Home() {
               Built for students who demand excellence.
             </p>
             </h1>
+          </div>
+          <div className="flex items-center justify-center">
+            <Link to={"https://play.google.com/store/apps/details?id=com.nielacademy"} target="_blank" rel="noopener noreferrer">
+              <img src="/images/getOnPlayStore.svg" alt="play store download"/>
+            </Link>
           </div>
         </div>
       </section>
