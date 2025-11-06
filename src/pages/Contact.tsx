@@ -67,7 +67,7 @@ export function Contact() {
             <CardContent>
               <div className="flex flex-col gap-4">
                 <a
-                  href="https://www.linkedin.com/in/othniel-che"
+                  href="https://www.linkedin.com/company/niel-academy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors group"
