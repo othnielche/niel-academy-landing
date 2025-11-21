@@ -1,20 +1,30 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.nielacademy.app",
-    "sha256_cert_fingerprints": [
-      "A2:76:66:D6:DF:CD:A0:87:72:8A:2D:DC:7E:1B:DC:06:39:9B:D4:6C:15:FD:6C:30:C4:C7:89:E3:88:FC:9A:AA",
-      "24:8D:61:BF:76:6B:99:A0:A9:DE:9A:DC:5D:73:43:69:32:1D:16:8A:4A:A0:4D:BE:0F:71:4B:D3:A1:0E:6E:0C"
-    ]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.nielacademy.app",
+      "sha256_cert_fingerprints": [
+        "A2:76:66:D6:DF:CD:A0:87:72:8A:2D:DC:7E:1B:DC:06:39:9B:D4:6C:15:FD:6C:30:C4:C7:89:E3:88:FC:9A:AA",
+        "24:8D:61:BF:76:6B:99:A0:A9:DE:9A:DC:5D:73:43:69:32:1D:16:8A:4A:A0:4D:BE:0F:71:4B:D3:A1:0E:6E:0C"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.nielacademy",
+      "sha256_cert_fingerprints": [
+        "A2:76:66:D6:DF:CD:A0:87:72:8A:2D:DC:7E:1B:DC:06:39:9B:D4:6C:15:FD:6C:30:C4:C7:89:E3:88:FC:9A:AA"
+      ]
+    }
   }
-}]
-
-
-
-
-
-
+]
 
 
 
