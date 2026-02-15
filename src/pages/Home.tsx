@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import DisplayCards from "@/components/ui/display-cards";
 import { Feature } from "@/components/ui/feature-with-advantages";
 import { TestimonialsColumn, type Testimonial } from "@/components/ui/testimonials-columns";
 import { BookOpen, Brain, CheckCircle2, MapPin, MessageSquare, Smartphone, Sparkles, Zap } from "lucide-react";
@@ -31,42 +30,6 @@ const playStoreTestimonials: Testimonial[] = [
   { name: "Tanto Carine", text: "you are the best", role: "Play Store · 5 stars" },
   { name: "forgwei g", text: "Wonderful 😊", role: "Play Store · 5 stars" },
   { name: "EFUETNJI MERCY", text: "best", role: "Play Store · 5 stars" },
-];
-
-const studyModeCards = [
-  {
-    icon: <Brain className="size-4 text-teal-200" />,
-    title: "Understanding",
-    description: "Learn by thinking: Socratic method",
-    date: "Deep learning & exam prep",
-    iconClassName: "text-teal-600",
-    iconContainerClassName: "bg-teal-800",
-    titleClassName: "text-teal-600",
-    className:
-      "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <BookOpen className="size-4 text-indigo-200" />,
-    title: "Guided",
-    description: "Learn by following: step-by-step",
-    date: "New topics & review",
-    iconClassName: "text-indigo-600",
-    iconContainerClassName: "bg-indigo-800",
-    titleClassName: "text-indigo-600",
-    className:
-      "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <Zap className="size-4 text-amber-200" />,
-    title: "Answer",
-    description: "Get answers fast: direct solutions",
-    date: "Check work & time pressure",
-    iconClassName: "text-amber-600",
-    iconContainerClassName: "bg-amber-800",
-    titleClassName: "text-amber-600",
-    className:
-      "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10",
-  },
 ];
 
 export function Home() {
