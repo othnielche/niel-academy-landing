@@ -4,70 +4,146 @@ export function About() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="prose prose-lg max-w-none">
           {/* Header */}
-          <h1 className="text-4xl font-bold text-neutral-900 mb-6 font-roboto-bold text-center">
+          <h1 className="text-4xl font-bold text-neutral-900 mb-2 font-roboto-bold text-center">
             About <span className="font-light font-serif">Niel Academy</span>
-          </h1> 
-          
-          {/* Introduction */}
+          </h1>
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-center">
+            Our Mission
+          </h2>
+
+          {/* Mission statement */}
           <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light text-center max-w-3xl mx-auto">
-            Niel Academy is an education platform built to give Cameroonian students reliable access to the learning materials they need, exactly when they need them. Our goal is to build the most complete content library for students preparing for national exams, beginning with the GCE and expanding to other exams over time.
+            Helping African students learn how to think, not just what to memorize.
           </p>
 
           <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light text-center max-w-3xl mx-auto">
-            We want to make it simple for students to find past papers, notes and study resources in one place, supported by an intelligent assistant that understands all of the content and helps students learn more effectively.
+            Niel Academy is building a mobile-first learning platform for students preparing for national exams. Past papers, notes, and study tools are designed for deeper understanding. Cameroon comes first (GCE and TVEE), with plans to expand elsewhere on the continent.
           </p>
 
-          {/* Why Niel Academy Was Created */}
+          {/* The Problem We're Solving */}
           <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-12 font-roboto-semibold">
-            Why Niel Academy Was Created
+            The Problem We&apos;re Solving
           </h2>
-          
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            Niel Academy was born from a clear gap in the market. Students in Cameroon struggle to access well-organized past questions, explanations and study support in a single platform. Materials are scattered, inconsistent or not easily searchable. At the same time, AI-based learning tools exist globally but none are designed for the local syllabus and exam structure.
+          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
+            In many African schools, students run into a few stubborn hurdles.
           </p>
-
-          <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light">
-            Niel Academy brings these elements together in one unified experience. Students get access to structured content and an AI tutor built specifically around that content.
+          <ul className="space-y-4 mb-6">
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Materials are scattered</span>
+              <span className="text-neutral-700 font-serif font-light"> Past papers, notes, explanations: they live in different places. Hard to track down, often inconsistent.</span>
+            </li>
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Memorization wins over understanding</span>
+              <span className="text-neutral-700 font-serif font-light"> Students copy solutions and cram. It works until the exam asks something slightly different.</span>
+            </li>
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Global edtech doesn&apos;t match local exams</span>
+              <span className="text-neutral-700 font-serif font-light"> Most platforms target foreign syllabuses. They assume fast internet and study habits that don&apos;t fit here.</span>
+            </li>
+          </ul>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
+            Put together, these gaps can deepen inequality and cap results. They also chip away at students&apos; belief that they can succeed.
           </p>
 
           {/* Our Approach */}
           <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
             Our Approach
           </h2>
-          
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            We believe students should not have to pay for basic access to past papers or educational materials. These resources should be available to everyone. For that reason, all content in the library is free to access.
-          </p>
-
-          <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light">
-            We only charge for features that require ongoing operational costs such as advanced AI capabilities and cloud-backed chat services. This allows us to keep the core learning materials free while still sustaining the technology that powers personalized learning.
-          </p>
-
-          
-          {/* Built by a Cameroonian Engineer */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Built by a Cameroonian Engineer
-          </h2>
-          
           <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
-            Niel Academy is created independently by <strong className="font-semibold text-neutral-900 font-roboto-semibold">Neba-Akongnwi Othniel Che</strong>, a Cameroonian software engineer committed to improving access to quality education through technology.
+            An exam-focused platform built for local curricula and everyday limits.
+          </p>
+          <ul className="space-y-4 mb-12">
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Free access to core materials</span>
+              <p className="text-neutral-700 font-serif font-light mt-1">Every student gets past papers and notes, no payment required.</p>
+            </li>
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Understanding comes first</span>
+              <p className="text-neutral-700 font-serif font-light mt-1">Reason through the problem before the solution shows up. That can build thinking skills instead of reliance on answers.</p>
+            </li>
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Different ways to learn</span>
+              <p className="text-neutral-700 font-serif font-light mt-1">Guided help, solo practice, or full solutions; pick what fits.</p>
+            </li>
+            <li>
+              <span className="font-roboto-semibold text-neutral-900">Built for phones and low data</span>
+              <p className="text-neutral-700 font-serif font-light mt-1">When it matters, content works offline. Designed for how students actually study.</p>
+            </li>
+          </ul>
+
+          {/* Why This Matters */}
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
+            Why This Matters
+          </h2>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
+            When students figure out how to think, not just recite:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-neutral-700 font-serif font-light">
+            <li>Grades tend to go up</li>
+            <li>Confidence grows</li>
+            <li>Fewer drop out</li>
+            <li>The gains can last beyond one exam</li>
+          </ul>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
+            Teaching students how to learn may be one of the highest-impact moves for education at scale.
           </p>
 
+          {/* Early Traction */}
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
+            Early Traction
+          </h2>
+          <ul className="list-disc pl-6 space-y-2 mb-4 text-neutral-700 font-serif font-light">
+            <li>Live in Cameroon</li>
+            <li>Students already using it to prep for exams</li>
+            <li>Public feedback that backs the need for local tools</li>
+            <li>Content library growing to match national exams</li>
+          </ul>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
+            Early signs point to strong demand for tools built around local contexts instead of imported ones.
+          </p>
+
+          {/* Our Vision */}
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
+            Our Vision
+          </h2>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
+            A leading platform for exam prep and critical thinking across Africa. Cameroon first, then other national systems.
+          </p>
+          <ul className="list-disc pl-6 space-y-2 mb-12 text-neutral-700 font-serif font-light">
+            <li>Reach millions of students</li>
+            <li>Work with schools, NGOs, education programs</li>
+            <li>Build systems that scale and stay affordable</li>
+            <li>Support long-term gains in learning outcomes</li>
+          </ul>
+
+          {/* Partnerships & Support */}
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
+            Partnerships & Support
+          </h2>
+          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
+            Open to working with:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-neutral-700 font-serif font-light">
+            <li>Grant-makers</li>
+            <li>Education NGOs</li>
+            <li>Fellowships and accelerators</li>
+            <li>Impact investors</li>
+            <li>Government and curriculum partners</li>
+          </ul>
           <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light">
-            Niel Academy is self-funded and developed solo. Every feature is designed with the goal of empowering students, improving accessibility and shaping a modern learning experience that reflects the needs of the community.
+            Care about scalable education access and better learning outcomes? Let&apos;s talk.
           </p>
 
           {/* Contact Section */}
-          <div className="rounded-2xl p-8 mt-12">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-LEFT">
+          <div className="rounded-2xl p-8 mt-12 border border-border bg-card">
+            <h3 className="text-xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-left">
               Contact
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Email Links */}
               <div className="space-y-4">
-                <a 
-                  href="mailto:cheothniel@nielacademy.com" 
+                <a
+                  href="mailto:cheothniel@nielacademy.com"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,9 +151,8 @@ export function About() {
                   </svg>
                   <span className="font-serif font-light">cheothniel@nielacademy.com</span>
                 </a>
-
-                <a 
-                  href="mailto:cheothniel@gmail.com" 
+                <a
+                  href="mailto:cheothniel@gmail.com"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,12 +161,10 @@ export function About() {
                   <span className="font-serif font-light">cheothniel@gmail.com</span>
                 </a>
               </div>
-
-              {/* Social Media Links */}
               <div className="space-y-4">
-                <a 
-                  href="https://www.linkedin.com/in/othniel-che" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/company/niel-academy"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
                 >
@@ -100,10 +173,9 @@ export function About() {
                   </svg>
                   <span className="font-serif font-light">LinkedIn</span>
                 </a>
-
-                <a 
-                  href="https://x.com/othnielche" 
-                  target="_blank" 
+                <a
+                  href="https://x.com/nielacademy"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
                 >
@@ -112,10 +184,9 @@ export function About() {
                   </svg>
                   <span className="font-serif font-light">X (Formerly Twitter)</span>
                 </a>
-
-                <a 
-                  href="https://www.instagram.com/othniel_che/" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/niel_academy/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
                 >

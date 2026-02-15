@@ -22,7 +22,7 @@ export function Footer() {
               </a>
 
               <a 
-                href="https://x.com/othnielche" 
+                href="https://x.com/nielacademy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-neutral-300 hover:text-white transition-colors"
@@ -34,7 +34,7 @@ export function Footer() {
               </a>
 
               <a 
-                href="https://www.instagram.com/othniel_che/" 
+                href="https://www.instagram.com/niel_academy/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-neutral-300 hover:text-white transition-colors"
@@ -57,6 +57,11 @@ export function Footer() {
               <li>
                 <Link to="/about" className="text-neutral-300 hover:text-white transition-colors">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/parents" className="text-neutral-300 hover:text-white transition-colors">
+                  For Parents
                 </Link>
               </li>
             </ul>

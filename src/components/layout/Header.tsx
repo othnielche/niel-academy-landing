@@ -40,6 +40,7 @@ const defaultLogo: LogoConfig = {
 const defaultNavItems: NavItem[] = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
+  { path: '/parents', label: 'Parents' },
   { path: '/contact', label: 'Contact' },
   { path: '/privacy-policy', label: 'Privacy Policy' },
 ];
