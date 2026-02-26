@@ -11,20 +11,6 @@ const navItems = [
   { path: "/contact", label: "Contact" },
 ] as const;
 
-function Wordmark() {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="size-9 rounded-xl bg-brand-primary text-white grid place-items-center font-semibold tracking-tight">
-        N
-      </div>
-      <div className="leading-tight">
-        <div className="text-sm text-neutral-900 font-semibold">Niel Academy</div>
-        <div className="text-xs text-neutral-600">Curriculum-aligned AI tutoring</div>
-      </div>
-    </div>
-  );
-}
-
 function DesktopNav() {
   const location = useLocation();
 

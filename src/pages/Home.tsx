@@ -5,7 +5,6 @@ import {
   LineChart,
   MessageSquareQuote,
   MoveRight,
-  Sparkles,
 } from "lucide-react";
 import { site } from "@/lib/site";
 
