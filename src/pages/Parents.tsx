@@ -200,7 +200,7 @@ export function Parents() {
             </p>
           </div>
           <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
-            <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-12" />
+            <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-20" />
           </a>
         </div>
       </section>
