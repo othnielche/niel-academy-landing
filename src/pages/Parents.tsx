@@ -140,7 +140,7 @@ export function Parents() {
             </p>
           </details>
 
-          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group" open>
             <summary className="cursor-pointer list-none flex items-start gap-3">
               <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
                 <ShieldCheck className="size-5" />
@@ -156,7 +156,7 @@ export function Parents() {
             </p>
           </details>
 
-          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group" open>
             <summary className="cursor-pointer list-none flex items-start gap-3">
               <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
                 <WifiOff className="size-5" />
@@ -172,7 +172,7 @@ export function Parents() {
             </p>
           </details>
 
-          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group" open>
             <summary className="cursor-pointer list-none flex items-start gap-3">
               <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
                 <BookOpen className="size-5" />
