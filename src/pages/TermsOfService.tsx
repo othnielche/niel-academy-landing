@@ -14,7 +14,6 @@ Niel Academy is operated as a sole proprietorship owned by:
 Buea, Cameroon  
 
 **Contact:**  
-cheothniel@gmail.com  
 cheothniel@nielacademy.com  
 support@nielacademy.com
 

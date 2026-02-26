@@ -79,8 +79,8 @@ export function About() {
           <div className="lg:col-span-4">
             <div className="text-xl text-neutral-900">Othniel Che</div>
             <div className="mt-1 text-sm text-brand-primary font-semibold">Founder & Software Engineer</div>
-            <a href={`mailto:${site.emails.founderPersonal}`} className="mt-4 inline-flex text-sm text-neutral-700 hover:text-neutral-900 transition-colors">
-              {site.emails.founderPersonal}
+            <a href={`mailto:${site.emails.founderPersonal}`} className="mt-4 inline-flex text-sm text-neutral-700 hover:text-neutral-900 hover:underline transition-colors">
+              {site.emails.founderWork}
             </a>
           </div>
           <div className="lg:col-span-8">

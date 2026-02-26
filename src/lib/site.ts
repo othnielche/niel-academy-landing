@@ -5,7 +5,6 @@ export const site = {
   emails: {
     support: "support@nielacademy.com",
     founderWork: "cheothniel@nielacademy.com",
-    founderPersonal: "cheothniel@gmail.com",
   },
   socials: {
     linkedin: "https://www.linkedin.com/company/niel-academy",
