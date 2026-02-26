@@ -1,203 +1,248 @@
+import { site } from "@/lib/site";
+
 export function About() {
   return (
-    <div className="flex-1 w-full h-full">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="prose prose-lg max-w-none">
-          {/* Header */}
-          <h1 className="text-4xl font-bold text-neutral-900 mb-2 font-roboto-bold text-center">
-            About <span className="font-light font-serif">Niel Academy</span>
-          </h1>
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-center">
-            Our Mission
-          </h2>
-
-          {/* Mission statement */}
-          <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light text-center max-w-3xl mx-auto">
-            Helping African students learn how to think, not just what to memorize.
-          </p>
-
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light text-center max-w-3xl mx-auto">
-            Niel Academy is building a mobile-first learning platform for students preparing for national exams. Past papers, notes, and study tools are designed for deeper understanding. Cameroon comes first (GCE and TVEE), with plans to expand elsewhere on the continent.
-          </p>
-
-          {/* The Problem We're Solving */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-12 font-roboto-semibold">
-            The Problem We&apos;re Solving
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
-            In many African schools, students run into a few stubborn hurdles.
-          </p>
-          <ul className="space-y-4 mb-6">
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Materials are scattered</span>
-              <span className="text-neutral-700 font-serif font-light"> Past papers, notes, explanations: they live in different places. Hard to track down, often inconsistent.</span>
-            </li>
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Memorization wins over understanding</span>
-              <span className="text-neutral-700 font-serif font-light"> Students copy solutions and cram. It works until the exam asks something slightly different.</span>
-            </li>
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Global edtech doesn&apos;t match local exams</span>
-              <span className="text-neutral-700 font-serif font-light"> Most platforms target foreign syllabuses. They assume fast internet and study habits that don&apos;t fit here.</span>
-            </li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            Put together, these gaps can deepen inequality and cap results. They also chip away at students&apos; belief that they can succeed.
-          </p>
-
-          {/* Our Approach */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Our Approach
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
-            An exam-focused platform built for local curricula and everyday limits.
-          </p>
-          <ul className="space-y-4 mb-12">
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Free access to core materials</span>
-              <p className="text-neutral-700 font-serif font-light mt-1">Every student gets past papers and notes, no payment required.</p>
-            </li>
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Understanding comes first</span>
-              <p className="text-neutral-700 font-serif font-light mt-1">Reason through the problem before the solution shows up. That can build thinking skills instead of reliance on answers.</p>
-            </li>
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Different ways to learn</span>
-              <p className="text-neutral-700 font-serif font-light mt-1">Guided help, solo practice, or full solutions; pick what fits.</p>
-            </li>
-            <li>
-              <span className="font-roboto-semibold text-neutral-900">Built for phones and low data</span>
-              <p className="text-neutral-700 font-serif font-light mt-1">When it matters, content works offline. Designed for how students actually study.</p>
-            </li>
-          </ul>
-
-          {/* Why This Matters */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Why This Matters
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            When students figure out how to think, not just recite:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mb-6 text-neutral-700 font-serif font-light">
-            <li>Grades tend to go up</li>
-            <li>Confidence grows</li>
-            <li>Fewer drop out</li>
-            <li>The gains can last beyond one exam</li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            Teaching students how to learn may be one of the highest-impact moves for education at scale.
-          </p>
-
-          {/* Early Traction */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Early Traction
-          </h2>
-          <ul className="list-disc pl-6 space-y-2 mb-4 text-neutral-700 font-serif font-light">
-            <li>Live in Cameroon</li>
-            <li>Students already using it to prep for exams</li>
-            <li>Public feedback that backs the need for local tools</li>
-            <li>Content library growing to match national exams</li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            Early signs point to strong demand for tools built around local contexts instead of imported ones.
-          </p>
-
-          {/* Our Vision */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Our Vision
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
-            A leading platform for exam prep and critical thinking across Africa. Cameroon first, then other national systems.
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mb-12 text-neutral-700 font-serif font-light">
-            <li>Reach millions of students</li>
-            <li>Work with schools, NGOs, education programs</li>
-            <li>Build systems that scale and stay affordable</li>
-            <li>Support long-term gains in learning outcomes</li>
-          </ul>
-
-          {/* Partnerships & Support */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Partnerships & Support
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            Open to working with:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mb-6 text-neutral-700 font-serif font-light">
-            <li>Grant-makers</li>
-            <li>Education NGOs</li>
-            <li>Fellowships and accelerators</li>
-            <li>Impact investors</li>
-            <li>Government and curriculum partners</li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-8 font-serif font-light">
-            Care about scalable education access and better learning outcomes? Let&apos;s talk.
-          </p>
-
-          {/* Contact Section */}
-          <div className="rounded-2xl p-8 mt-12 border border-border bg-card">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-left">
-              Contact
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <a
-                  href="mailto:cheothniel@nielacademy.com"
-                  className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="font-serif font-light">cheothniel@nielacademy.com</span>
-                </a>
-                <a
-                  href="mailto:cheothniel@gmail.com"
-                  className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="font-serif font-light">cheothniel@gmail.com</span>
-                </a>
-              </div>
-              <div className="space-y-4">
-                <a
-                  href="https://www.linkedin.com/company/niel-academy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  <span className="font-serif font-light">LinkedIn</span>
-                </a>
-                <a
-                  href="https://x.com/nielacademy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                  <span className="font-serif font-light">X (Formerly Twitter)</span>
-                </a>
-                <a
-                  href="https://www.instagram.com/niel_academy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-neutral-700 hover:text-brand-primary transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                  <span className="font-serif font-light">Instagram</span>
-                </a>
-              </div>
-            </div>
+    <div className="w-full">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-0 -left-28 size-[300px] rounded-full bg-brand-primary/8 blur-1xl" />
+          <div className="absolute -bottom-0 -right-28 size-[300PX] rounded-full bg-brand-primary/6 blur-1xl" />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative">
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Our Mission & Vision</div>
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl text-neutral-900">
+              Quality learning should be within reach.
+            </h1>
+            <p className="mt-5 text-neutral-700 text-lg leading-relaxed">
+              Across Sub-Saharan Africa, many classrooms are large and teachers are stretched thin. Niel Academy is
+              building curriculum-aligned support that students can use day-to-day, starting in Cameroon and
+              expanding over time.
+            </p>
           </div>
+        </div>
+      </section>
+
+      {/* The problem */}
+      <section className="mx-auto max-w-7xl px-4 pt-2 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">The problem</div>
+        <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">A gap we can close</h2>
+        <div className="mt-5 text-neutral-700 leading-relaxed max-w-3xl">
+          Teacher shortages and large class sizes make it hard to give every learner enough attention. UNESCO
+          highlights the scale of the challenge.
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="rounded-2xl bg-neutral-950 text-white p-6 border border-white/10">
+            <div className="text-4xl font-semibold tracking-tight">15M</div>
+            <p className="mt-2 text-white/80 leading-relaxed">
+              More teachers needed across Sub-Saharan Africa by 2030 to meet quality education goals{" "}
+              <span className="text-white/60">(UNESCO)</span>
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-neutral-950 text-white p-6 border border-white/10">
+            <div className="text-4xl font-semibold tracking-tight">58:1</div>
+            <p className="mt-2 text-white/80 leading-relaxed">
+              Average pupil-to-trained-teacher ratio at primary level across the region{" "}
+              <span className="text-white/60">(UNESCO)</span>
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-4xl font-semibold tracking-tight text-neutral-900">85:1</div>
+            <p className="mt-2 text-neutral-700 leading-relaxed">
+              Students per teacher in some Cameroonian classrooms, which makes individual support very difficult
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-2xl bg-white/70 border border-neutral-200/70 p-6 md:p-7">
+          <div className="text-lg text-neutral-900">What this means in practice</div>
+          <ul className="mt-3 space-y-2 text-neutral-700 leading-relaxed">
+            <li>Less time for individual questions and feedback.</li>
+            <li>Students who fall behind can stay behind for longer.</li>
+            <li>Families often have to find extra support outside school.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">The founder</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Built from lived experience</h2>
+        </div>
+
+        <div className="mt-10 rounded-3xl bg-white/70 border border-neutral-200/70 p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-4">
+            <div className="text-xl text-neutral-900">Othniel Che</div>
+            <div className="mt-1 text-sm text-brand-primary font-semibold">Founder & Software Engineer</div>
+            <a href={`mailto:${site.emails.founderPersonal}`} className="mt-4 inline-flex text-sm text-neutral-700 hover:text-neutral-900 transition-colors">
+              {site.emails.founderPersonal}
+            </a>
+          </div>
+          <div className="lg:col-span-8">
+            <p className="text-neutral-900 text-lg leading-relaxed font-serif font-light">
+              “As a secondary school student in Cameroon, I used platforms like Khan Academy to study after
+              school. While helpful, these tools weren&apos;t built for our curriculum, exams or context. Years
+              later, I watched my younger sister face the same challenges. Very little had changed.”
+            </p>
+            <p className="mt-5 text-neutral-700 leading-relaxed">
+              As a software engineer already working with AI, Othniel decided to build the platform he wished he
+              had. Niel Academy is a curriculum-aligned AI tutor designed specifically for Cameroonian and African
+              students, built with pedagogy and affordability at its core.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Traction (without usage metrics) */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="rounded-3xl bg-neutral-950 text-white p-10 lg:p-14 relative overflow-hidden">
+          <div className="relative max-w-3xl">
+            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Traction</div>
+            <h2 className="mt-3 text-3xl sm:text-4xl">Early proof it’s working</h2>
+            <p className="mt-4 text-white/80 leading-relaxed">
+              Already in use by students preparing for exams, with feedback guiding what we build next.
+            </p>
+            <ul className="mt-6 space-y-2 text-white/85">
+              <li>Live in Cameroon</li>
+              <li>Built around official past papers</li>
+              <li>Students using it for consistent exam prep</li>
+              <li>Content coverage expanding over time</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Why now */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Why now</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Why this works now</h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Mobile access is rising</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Smartphones open a channel to reach learners who were previously hard to support.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">AI makes tutoring affordable</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Personalised tutoring at scale used to be impossible. Now it can be done responsibly.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Teacher gaps are widening</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              The demand for quality support is outpacing the supply of trained teachers.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Students already use AI</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Learners turn to generic tools that aren’t curriculum-aligned. We’re building a better alternative.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Roadmap</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Where we’re going</h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
+            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Now</div>
+            <h3 className="mt-2 text-xl text-neutral-900">Exam prep for Cameroon GCE</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Live and growing. Students practice official past papers with AI tutoring across core subjects.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
+            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Next</div>
+            <h3 className="mt-2 text-xl text-neutral-900">Expand coverage</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Add more subjects, languages, and national exam boards, including Francophone learners.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
+            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Future</div>
+            <h3 className="mt-2 text-xl text-neutral-900">A full learning companion</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Move beyond exam practice to support the full school curriculum for daily learning, not just revision.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
+            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Vision</div>
+            <h3 className="mt-2 text-xl text-neutral-900">Partnerships at scale</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Work with exam boards, NGOs, schools, and governments to expand access sustainably.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What we’re seeking */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">For partners</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">What we’re seeking</h2>
+          <p className="mt-4 text-neutral-700 leading-relaxed">
+            We’re looking for partners who share the belief that every African student deserves a brilliant tutor.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Seed funding</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Scale content acquisition, curriculum coverage, and infrastructure.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Regional expansion</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Support expansion into new countries, exam boards, and languages.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Education partnerships</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Work with NGOs, schools, exam boards, and telcos to broaden access.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="text-lg text-neutral-900">Responsible AI mentorship</div>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Guidance on scaling AI ethically and effectively in low-resource contexts.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 rounded-3xl bg-neutral-950 text-white p-10 lg:p-14 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Get in touch</div>
+            <h2 className="mt-3 text-3xl sm:text-4xl">Let’s build this together</h2>
+            <p className="mt-4 text-white/80 leading-relaxed">
+              Whether you’re an investor, NGO, school, or you just believe in the mission, we’d love to hear from
+              you.
+            </p>
+          </div>
+          <a
+            href={`mailto:${site.emails.founderPersonal}`}
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-white hover:opacity-95 transition-opacity text-black" 
+          >
+            Email us
+          </a>
         </div>
       </section>
     </div>

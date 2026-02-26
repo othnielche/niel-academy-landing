@@ -1,349 +1,208 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Feature } from "@/components/ui/feature-with-advantages";
-import { TestimonialsColumn, type Testimonial } from "@/components/ui/testimonials-columns";
-import { BookOpen, Brain, CheckCircle2, MapPin, MessageSquare, Smartphone, Sparkles, Zap } from "lucide-react";
-import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-
-const whatsNewAdvantages = [
-  { title: "Three study modes", description: "Understanding, Guided, or Answer; pick what fits." },
-  { title: "Past papers library", description: "GCE O-Level, A-Level, and TVEE exams in one place." },
-  { title: "AI tutoring", description: "Explanations and help when you&apos;re stuck." },
-  { title: "Free to use", description: "Core content and past papers at no cost." },
-  { title: "Offline access", description: "Study without internet when you need to." },
-  { title: "Built for your curriculum", description: "Content that matches your syllabus and exam board." },
-];
-
-const whyStudentsUse = [
-  "Think through questions instead of memorizing",
-  "Thousands of past exam questions",
-  "Study online or offline",
-  "Modes that match how you learn",
-  "Made for Cameroonian students",
-];
-
-// From docs/play-store-reviews.md; keep in sync with source
-const playStoreTestimonials: Testimonial[] = [
-  { name: "Brian Wirngo", text: "very very good but Not all subject like Religious studies is not there both for O-level and A-level", role: "Play Store · 4 stars" },
-  { name: "Mesue Mark", text: "i love 😘 the app just that is limited to 2020 past questions", role: "Play Store · 5 stars" },
-  { name: "NANGWE DAVID", text: "THE BEST SO FAR IN CAMEROON🇨🇲", role: "Play Store · 5 stars" },
-  { name: "Tanto Carine", text: "you are the best", role: "Play Store · 5 stars" },
-  { name: "forgwei g", text: "Wonderful 😊", role: "Play Store · 5 stars" },
-  { name: "EFUETNJI MERCY", text: "best", role: "Play Store · 5 stars" },
-];
+import {
+  Brain,
+  FileText,
+  LineChart,
+  MessageSquareQuote,
+  MoveRight,
+  Sparkles,
+} from "lucide-react";
+import { site } from "@/lib/site";
 
 export function Home() {
   return (
-    <div className="flex-1 w-full h-full">
-      {/* Hero Section - flat, two-column */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-20 pt-12">
-        <div className="grid  gap-8 items-center">
-          <div>
-            <h1 className="lg:text-8xl md:text-7xl sm:text-6xl text-neutral-900 mb-6 leading-tight text-center font-roboto-bold">
-              Built for <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">African students.</span> <span className="underline decoration-brand-primary decoration-5 underline-offset-8 font-light font-serif">Deeper understanding</span>, not shortcuts.
-            </h1>
-            <p className="text-neutral-700 text-lg mb-8 leading-relaxed text-center font-serif font-stretch-condensed font-light max-w-2xl mx-auto">
-              A mobile app for exam prep. Think through problems instead of copying answers. Study at your own pace with modes that match your curriculum.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="https://play.google.com/store/apps/details?id=com.nielacademy" target="_blank" rel="noopener noreferrer">
-                <img src="/images/getOnPlayStore.svg" alt="Download on Play Store" />
-              </Link>
-              <Link to="#study-modes" className="text-brand-primary font-medium underline underline-offset-4 hover:no-underline">
-                Try Understanding Mode →
-              </Link>
+    <div className="w-full">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-0 -right-39 size-[420px] rounded-full bg-brand-primary/10 blur-1xl" />
+          <div className="absolute -bottom-0 -left-40 size-[520px] rounded-full bg-brand-primary/10 blur-1xl" />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7">
+              {/* <div className="inline-flex items-center gap-2 rounded-full bg-brand-card/60 px-4 py-2 text-sm text-neutral-800">
+                <span className="inline-block size-2 rounded-full bg-brand-primary" />
+                Now live in Cameroon
+              </div> */}
+              <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl text-neutral-900 tracking-tight">
+                Every student deserves a brilliant tutor.
+              </h1>
+              <p className="mt-5 text-lg sm:text-xl text-neutral-700 leading-relaxed max-w-2xl">
+                Niel Academy gives African learners personalised AI tutoring aligned to their exact curriculum, so
+                no student gets left behind in a crowded classroom.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
+                  <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-20" />
+                </a>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-neutral-950 transition-colors"
+                >
+                  Our mission <MoveRight className="size-4" />
+                </Link>
+              </div>
+
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl">
+                <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
+                  <div className="text-sm font-semibold text-neutral-900">Curriculum-aligned</div>
+                  <div className="text-sm text-neutral-600 mt-1">Built for what you’re actually learning.</div>
+                </div>
+                <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
+                  <div className="text-sm font-semibold text-neutral-900">Three learning modes</div>
+                  <div className="text-sm text-neutral-600 mt-1">Understanding, Guided, or Answer.</div>
+                </div>
+                <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
+                  <div className="text-sm font-semibold text-neutral-900">Personal feedback</div>
+                  <div className="text-sm text-neutral-600 mt-1">Know what to fix before the exam.</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="rounded-3xl overflow-hidden ">
+                <img
+                  src="/images/study-modes.png"
+                  alt="Niel Academy study modes on mobile"
+                  className="w-100 h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why students use Niel Academy */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h2 className="text-2xl font-semibold text-neutral-900 mb-6 text-center font-roboto-semibold">
-          Why students use Niel Academy
-        </h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {whyStudentsUse.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-neutral-700 font-serif">
-              <CheckCircle2 className="size-5 text-brand-primary shrink-0 mt-0.5" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* How it works */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">How it works</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">
+            From exam paper to understanding, in minutes
+          </h2>
+        </div>
 
-      {/* Interactive Chat: Your personal study partner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
-          <div className="md:w-1/2">
-            <div className="flex items-center gap-2 text-neutral-600 mb-2">
-              <MessageSquare className="size-5 text-brand-primary" />
-              <span className="text-sm font-medium">Interactive Learning</span>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="flex items-center gap-3">
+              <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+                <FileText className="size-5" />
+              </div>
+              <div className="text-lg font-semibold text-neutral-900">Pick your paper</div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-neutral-900 mb-2 font-roboto-semibold">
-              Your personal study partner
-            </h3>
-            <p className="text-neutral-600 font-serif leading-relaxed mb-4">
-              Stuck on a topic? Ask questions or work through problems with a tutor that knows your syllabus.
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Browse official past papers from the Cameroon GCE board, organised by subject, year, and level.
             </p>
-            <Link to="https://play.google.com/store/apps/details?id=com.nielacademy" target="_blank" rel="noopener noreferrer" className="text-brand-primary font-medium underline underline-offset-4 hover:no-underline inline-flex items-center gap-1">
-              Start chatting now →
-            </Link>
           </div>
-          <div className="md:w-1/2">
-            <img src="/images/interactive-chat-screenshot3.png" alt="Interactive Chat" className="object-contain rounded-4xl w-full" />
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="flex items-center gap-3">
+              <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+                <Brain className="size-5" />
+              </div>
+              <div className="text-lg font-semibold text-neutral-900">Choose your mode</div>
+            </div>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Work through questions in Understanding, Guided, or Answer mode, depending on how you want to learn
+              that day.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="flex items-center gap-3">
+              <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+                <LineChart className="size-5" />
+              </div>
+              <div className="text-lg font-semibold text-neutral-900">Get personalised feedback</div>
+            </div>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              After each session, Niel reviews your performance and tells you what to strengthen before your exam.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Free Past Papers & Content Library */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="text-center md:flex-row lg:flex-row flex-col mb-12 min-h-[400px] flex rounded-4xl bg-brand-background justify-center">
-          <div className="text-neutral-700 text-lg max-w-3xl mx-auto font-serif lg:w-1/2 w-full flex p-6">
+      {/* Learning modes */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Learning modes</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">One app, three ways to learn</h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
+            <div className="inline-flex items-center rounded-full bg-brand-background px-3 py-1 text-xs font-semibold text-neutral-800">
+              Understanding Mode
+            </div>
+            <h3 className="mt-4 text-xl text-neutral-900">Build problem-solving skills</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Niel guides you to the answer by asking the right questions instead of just giving it to you. You’ll
+              understand the concept, not just the result.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
+            <div className="inline-flex items-center rounded-full bg-brand-card px-3 py-1 text-xs font-semibold text-neutral-800">
+              Guided Mode
+            </div>
+            <h3 className="mt-4 text-xl text-neutral-900">Step-by-step with explanations</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              When you’re stuck, Niel breaks down the question into clear, manageable steps with explanations you
+              can learn from.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
+            <div className="inline-flex items-center rounded-full bg-brand-primary/15 px-3 py-1 text-xs font-semibold text-neutral-800">
+              Answer Mode
+            </div>
+            <h3 className="mt-4 text-xl text-neutral-900">Get a quick answer</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Sometimes you just need the answer to keep your momentum going. Answer mode gives it instantly, with
+              context.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder quote */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="rounded-3xl bg-brand-background/60 ">
+          <div className="flex items-start gap-4">
+            <div className="size-12 rounded-2xl bg-white/80 border border-neutral-200 grid place-items-center text-neutral-900 shrink-0">
+              <MessageSquareQuote className="size-5" />
+            </div>
             <div>
-              <h3 className="lg:text-5xl text-3xl font-bold text-neutral-900 mb-4 text-left font-roboto-semibold">Free Past Papers & Content Library</h3>
-              <p className="text-neutral-600 lg:text-2xl text-lg leading-relaxed text-left font-serif font-regular mb-4">
-                Official exam questions. Practice that matches test day.
+              <p className="text-2xl sm:text-3xl text-neutral-900 leading-snug font-serif font-light">
+                “I built the platform I wish I had — a curriculum-aligned AI tutor designed for Cameroonian and
+                African students.”
               </p>
-              <p className="text-neutral-600 lg:text-lg text-base leading-relaxed text-left font-serif">
-                Thousands of past papers and notes, grouped by exam type and year. Practice with the same kind of questions you&apos;ll see on test day.
-              </p>
-              <ul className="mt-4 space-y-2 text-neutral-600 font-serif text-sm">
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Past papers and notes, free</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Sorted by exam type and year</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Questions that match your syllabus</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Core content available offline</li>
-              </ul>
-            </div>
-          </div>
-          <div className="font-bold text-neutral-900 mb-4 lg:w-1/2 w-full min-h-[400px] flex flex-col justify-center p-6">
-            <p className="text-sm text-neutral-600 font-serif mb-4">Exams we support</p>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-3 border-b border-neutral-600 cursor-pointer transition-colors">
-                <div>
-                  <h5 className="font-medium text-black font-roboto-bold">GCE Ordinary Level (O-Level)</h5>
-                  <p className="text-sm text-neutral-600 font-serif font-light text-left">Form 5 completion examination</p>
-                </div>
-              </div>
-              <div className="flex justify-between py-3 border-b border-neutral-600 cursor-pointer transition-colors">
-                <div>
-                  <h5 className="font-medium text-black font-roboto-bold">GCE Advanced Level (A-Level)</h5>
-                  <p className="text-sm text-neutral-600 font-serif font-light text-left">Upper Sixth Form examination</p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-neutral-600 cursor-pointer transition-colors">
-                <div>
-                  <h5 className="font-medium text-black font-roboto-bold">TVEE Intermediate Level</h5>
-                  <p className="text-sm text-neutral-600 font-serif font-light text-left">Technical & Vocational Education</p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center py-3 cursor-pointer transition-colors">
-                <div>
-                  <h5 className="font-medium text-black font-roboto-bold">TVEE Advanced Level</h5>
-                  <p className="text-sm text-neutral-600 font-serif font-light text-left">Advanced Technical & Vocational</p>
-                </div>
-              </div>
+              <p className="mt-4 text-neutral-700">— Othniel Che, Founder · Niel Academy</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What's New: Feature with advantages */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Feature
-          badge="What's New"
-          title="Something new!"
-          description="Past papers, tutoring, and study modes that adapt to how you learn. Focus on what matters: passing your exams."
-          advantages={whatsNewAdvantages}
-        />
-      </section>
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* What Makes Niel Academy Different */}
-        <h2 className="md:text-5xl md:w-2/3 font-semibold text-neutral-900 mb-3 mt-8 font-roboto-semibold">
-          What Makes <span className="font-light font-serif">Niel Academy</span> Different
-        </h2>
-        <p className="text-neutral-600 text-lg font-serif mb-8 max-w-xl">
-          Most study apps give answers. We focus on understanding.
-        </p>
-        <p className="text-sm font-medium text-neutral-500 mb-4">A few ways we stand out:</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                Made for African students, not adapted from foreign syllabuses.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <BookOpen className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                A growing library focused on African exams. We started with GCE.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <Brain className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                With Understanding Mode, you think before solutions appear.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <BookOpen className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                Guided Mode walks you through when you need help.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                When you need the answer fast, Answer Mode is there.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <Smartphone className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                Offline access when internet is spotty.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-brand-card border-brand-card md:col-span-2 lg:col-span-1">
-            <CardHeader>
-              <div className="w-10 h-10 flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-neutral-800" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-neutral-800 text-lg font-serif font-light leading-relaxed">
-                Simple design that runs on low-end phones.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="md:text-5xl font-semibold text-neutral-900 mb-6 font-roboto-semibold">
-          How It Works
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col">
-            <span className="text-3xl font-bold text-brand-primary font-roboto-bold mb-2">1</span>
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2 font-roboto-semibold">Choose your subject and exam</h3>
-            <p className="text-neutral-600 font-serif leading-relaxed">GCE, TVEE, or another supported exam.</p>
+      {/* Download CTA */}
+      <section id="download" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="rounded-3xl bg-neutral-950 text-white overflow-hidden relative">
+          <div className="absolute inset-0 pointer-events-none">
+            {/* <div className="absolute -top-24 -right-24 size-[360px] rounded-full bg-brand-primary/12 blur-2xl" />
+            <div className="absolute -bottom-24 -left-24 size-[360px] rounded-full bg-brand-primary/10 blur-2xl" /> */}
           </div>
-          <div className="flex flex-col">
-            <span className="text-3xl font-bold text-brand-primary font-roboto-bold mb-2">2</span>
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2 font-roboto-semibold">Pick your study mode</h3>
-            <p className="text-neutral-600 font-serif leading-relaxed">Understanding, Guided, or Answer; whatever fits.</p>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-3xl font-bold text-brand-primary font-roboto-bold mb-2">3</span>
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2 font-roboto-semibold">Practice until it clicks</h3>
-            <p className="text-neutral-600 font-serif leading-relaxed">Build reasoning skills, not just memory.</p>
+          <div className="relative p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-8">
+              <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Available now</div>
+              <h2 className="mt-3 text-3xl sm:text-4xl">Start learning for free today</h2>
+              <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+                Download Niel Academy on Google Play and study with a tutor that follows your curriculum.
+              </p>
+            </div>
+            <div className="lg:col-span-4 lg:justify-self-end">
+              <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-20" />
+              </a>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Study Modes: choose how you learn */}
-      {/* <section id="study-modes" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="mb-12">
-          <h2 className="md:text-5xl md:w-2/3 font-semibold text-neutral-900 mb-4 font-roboto-semibold">
-            Study Modes: Learn <span className="font-light font-serif">Your</span> Way
-          </h2>
-          <p className="text-neutral-600 text-lg max-w-2xl font-serif font-light leading-relaxed">
-            Switch between three learning modes based on what you need: deep understanding with the Socratic method, step-by-step guidance for new topics, or fast direct answers when you&apos;re short on time.
-          </p>
-        </div>
-        <div className="flex min-h-[400px] w-full items-center justify-center py-8">
-          <div className="w-full max-w-3xl">
-            <DisplayCards cards={studyModeCards} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
-          <div>
-            <p className="font-medium text-teal-700 font-roboto-semibold mb-1">Understanding</p>
-            <p className="text-sm text-neutral-600 font-serif font-light">Best for exam prep and building lasting skills</p>
-          </div>
-          <div>
-            <p className="font-medium text-indigo-700 font-roboto-semibold mb-1">Guided</p>
-            <p className="text-sm text-neutral-600 font-serif font-light">Best for new problem types and review</p>
-          </div>
-          <div>
-            <p className="font-medium text-amber-700 font-roboto-semibold mb-1">Answer</p>
-            <p className="text-sm text-neutral-600 font-serif font-light">Best for checking work and time pressure</p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Testimonials: What our users say */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-brand-background/50 rounded-3xl my-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto text-center mb-10"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 font-roboto-semibold mb-3">
-            What our users say
-          </h2>
-          <p className="text-neutral-600 font-serif">
-            What students say on the Play Store.
-          </p>
-        </motion.div>
-        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden">
-          <TestimonialsColumn testimonials={playStoreTestimonials.slice(0, 2)} duration={18} />
-          <TestimonialsColumn testimonials={playStoreTestimonials.slice(2, 4)} className="hidden md:block" duration={22} />
-          <TestimonialsColumn testimonials={playStoreTestimonials.slice(4, 6)} className="hidden lg:block" duration={20} />
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4 font-roboto-semibold">
-          Ready to study better?
-        </h2>
-        <p className="text-neutral-600 text-lg font-serif mb-8 max-w-xl mx-auto">
-          Download Niel Academy. Start learning with understanding.
-        </p>
-        <Link to="https://play.google.com/store/apps/details?id=com.nielacademy" target="_blank" rel="noopener noreferrer">
-          <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="mx-auto" />
-        </Link>
       </section>
     </div>
   );

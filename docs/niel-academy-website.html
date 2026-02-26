@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niel Academy – AI Tutoring for African Learners</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --rust:    #C9614A;
+    --rust-lt: #E07B63;
+    --rust-dk: #A34A35;
+    --cream:   #FAF7F2;
+    --sand:    #EDE5D8;
+    --warm-gray: #7A6E66;
+    --charcoal: #2C2420;
+    --text:    #3D3530;
+    --white:   #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,97,74,0.12);
+    transition: box-shadow .3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(44,36,32,0.08); }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: .6rem;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 34px; height: 34px;
+    background: var(--rust);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; color: white; font-size: 1rem;
+  }
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--warm-gray);
+    font-size: .92rem; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--rust); }
+
+  .nav-cta {
+    background: var(--rust); color: white;
+    border: none; border-radius: 50px;
+    padding: .55rem 1.4rem; font-size: .9rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .nav-cta:hover { background: var(--rust-dk); transform: translateY(-1px); }
+
+  /* ── PAGE SYSTEM ── */
+  .page { display: none; padding-top: 70px; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ── SHARED COMPONENTS ── */
+  .section { padding: 5rem 5%; }
+  .section-narrow { max-width: 760px; margin: 0 auto; }
+  .section-wide { max-width: 1100px; margin: 0 auto; }
+
+  .label {
+    display: inline-block;
+    font-size: .75rem; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--rust);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 900; line-height: 1.12;
+    color: var(--charcoal);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--charcoal);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: .5rem;
+  }
+  p { line-height: 1.75; color: var(--warm-gray); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--rust); color: white;
+    border: none; border-radius: 50px;
+    padding: .85rem 2rem; font-size: 1rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(201,97,74,0.3);
+  }
+  .btn:hover { background: var(--rust-dk); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,97,74,0.4); }
+  .btn-outline {
+    background: transparent; color: var(--rust);
+    border: 2px solid var(--rust); box-shadow: none;
+  }
+  .btn-outline:hover { background: var(--rust); color: white; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 60px; height: 3px; background: var(--rust);
+    border-radius: 2px; margin: 1.2rem 0 1.8rem;
+  }
+
+  /* ══════════════════════════════
+     HOME PAGE
+  ══════════════════════════════ */
+
+  /* Hero */
+  .hero {
+    background: var(--cream);
+    padding: 6rem 5% 5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+    min-height: calc(100vh - 70px);
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(201,97,74,0.1); color: var(--rust);
+    font-size: .8rem; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase;
+    border-radius: 50px; padding: .4rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow span { width: 6px; height: 6px; background: var(--rust); border-radius: 50%; }
+  .hero h1 { margin-bottom: 1.4rem; }
+  .hero p { font-size: 1.08rem; margin-bottom: 2.2rem; max-width: 480px; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 3rem;
+    padding-top: 2rem; border-top: 1px solid var(--sand);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; color: var(--rust);
+    display: block;
+  }
+  .stat-label { font-size: .8rem; color: var(--warm-gray); font-weight: 500; }
+
+  .hero-visual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .phone-mockup {
+    width: 240px;
+    background: var(--charcoal);
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: 0 40px 80px rgba(44,36,32,0.25), 0 0 0 1px rgba(255,255,255,0.05);
+    position: relative; z-index: 2;
+  }
+  .phone-screen {
+    background: #1a1614;
+    border-radius: 26px; overflow: hidden;
+    aspect-ratio: 9/19.5;
+    padding: 1.2rem 1rem;
+    display: flex; flex-direction: column; gap: .6rem;
+  }
+  .phone-header {
+    color: rgba(255,255,255,0.5); font-size: .55rem;
+    display: flex; justify-content: space-between;
+  }
+  .phone-title { color: var(--rust-lt); font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+  .phone-sub { color: rgba(255,255,255,0.4); font-size: .55rem; margin-bottom: .6rem; }
+  .chat-bubble {
+    border-radius: 12px 12px 12px 4px;
+    padding: .55rem .7rem;
+    font-size: .52rem; line-height: 1.5;
+  }
+  .chat-ai { background: rgba(201,97,74,0.15); color: rgba(255,255,255,0.85); }
+  .chat-user {
+    background: var(--rust); color: white;
+    border-radius: 12px 12px 4px 12px;
+    align-self: flex-end; max-width: 85%;
+  }
+  .phone-input {
+    margin-top: auto;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px; padding: .5rem .8rem;
+    font-size: .52rem; color: rgba(255,255,255,0.3);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .phone-send {
+    width: 18px; height: 18px; background: var(--rust);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  }
+  .phone-send::after { content: '→'; color: white; font-size: .5rem; }
+
+  .hero-blob {
+    position: absolute;
+    width: 320px; height: 320px;
+    background: radial-gradient(ellipse, rgba(201,97,74,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .subject-chip {
+    position: absolute; background: white;
+    border-radius: 50px; padding: .45rem 1rem;
+    font-size: .72rem; font-weight: 600;
+    box-shadow: 0 4px 20px rgba(44,36,32,0.12);
+    display: flex; align-items: center; gap: .4rem;
+    z-index: 3; animation: float 3s ease-in-out infinite;
+  }
+  .subject-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rust); }
+  .chip-1 { top: 10%; left: -10%; animation-delay: 0s; }
+  .chip-2 { top: 55%; right: -8%; animation-delay: 1s; }
+  .chip-3 { bottom: 12%; left: 0%; animation-delay: 1.8s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* How it works */
+  .how-section { background: var(--sand); }
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 3rem;
+  }
+  .step-card {
+    background: white; border-radius: 20px; padding: 2rem;
+    position: relative; overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .step-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(44,36,32,0.1); }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 900;
+    color: rgba(201,97,74,0.1);
+    position: absolute; top: .5rem; right: 1.2rem;
+    line-height: 1;
+  }
+  .step-icon {
+    width: 48px; height: 48px; background: rgba(201,97,74,0.1);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.2rem;
+  }
+
+  /* Modes */
+  .modes-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .mode-card {
+    border-radius: 20px; padding: 2rem;
+    transition: transform .25s;
+  }
+  .mode-card:hover { transform: translateY(-4px); }
+  .mode-understanding { background: #E8F0EC; }
+  .mode-guided { background: #E8EBF5; }
+  .mode-answer { background: rgba(201,97,74,0.1); }
+  .mode-tag {
+    display: inline-block;
+    font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--rust);
+    margin-bottom: .8rem;
+  }
+
+  /* Testimonial */
+  .testimonial-section { background: var(--charcoal); }
+  .testimonial-section .label { color: var(--rust-lt); }
+  .testimonial-section h2 { color: white; }
+  .quote-large {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400; font-style: italic;
+    color: rgba(255,255,255,0.85); line-height: 1.5;
+    max-width: 760px; margin: 2rem 0;
+    border-left: 3px solid var(--rust);
+    padding-left: 2rem;
+  }
+  .quote-attr { color: var(--rust-lt); font-size: .9rem; font-weight: 600; }
+
+  /* CTA Banner */
+  .cta-banner {
+    background: var(--rust);
+    padding: 5rem 5%;
+    text-align: center;
+  }
+  .cta-banner h2 { color: white; margin-bottom: 1rem; }
+  .cta-banner p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
+  .btn-white {
+    background: white; color: var(--rust);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { background: var(--cream); color: var(--rust-dk); }
+
+  /* App Store Buttons */
+  .app-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: .5rem; }
+  .app-btn {
+    display: inline-flex; align-items: center; gap: .7rem;
+    background: var(--charcoal); color: white;
+    border-radius: 12px; padding: .7rem 1.4rem;
+    text-decoration: none; transition: background .2s, transform .15s;
+  }
+  .app-btn:hover { background: #3d3530; transform: translateY(-2px); }
+  .app-btn-icon { font-size: 1.6rem; }
+  .app-btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .app-btn-sub { font-size: .65rem; opacity: .7; }
+  .app-btn-name { font-size: .95rem; font-weight: 600; }
+
+  /* ══════════════════════════════
+     PARENTS PAGE
+  ══════════════════════════════ */
+  .parents-hero {
+    background: linear-gradient(135deg, #2C2420 0%, #3D3530 100%);
+    padding: 6rem 5% 5rem;
+    text-align: center;
+  }
+  .parents-hero h1 { color: white; margin-bottom: 1.2rem; }
+  .parents-hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; }
+
+  .parents-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; margin-top: 3rem;
+  }
+  .parents-card {
+    background: white; border-radius: 20px; padding: 2rem;
+    border: 1px solid var(--sand);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .parents-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(44,36,32,0.1); }
+
+  .icon-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(201,97,74,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.2rem;
+  }
+
+  .concern-section { background: var(--sand); }
+  .concerns-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .concern-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    background: white; border-radius: 16px; padding: 1.5rem 1.8rem;
+  }
+  .concern-check {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--rust); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8rem; flex-shrink: 0; margin-top: .2rem;
+  }
+
+  .cost-box {
+    background: var(--charcoal); border-radius: 24px;
+    padding: 3rem; margin-top: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; align-items: center;
+  }
+  .cost-box h3, .cost-label { color: white; }
+  .cost-compare {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .cost-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.2rem; border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+  }
+  .cost-row-name { color: rgba(255,255,255,0.6); font-size: .9rem; }
+  .cost-row-price { font-weight: 700; }
+  .cost-row.highlight { background: rgba(201,97,74,0.2); }
+  .cost-row.highlight .cost-row-price { color: var(--rust-lt); font-size: 1.1rem; }
+
+  /* ══════════════════════════════
+     MISSION / INVESTORS PAGE
+  ══════════════════════════════ */
+  .mission-hero {
+    background: var(--cream);
+    padding: 6rem 5% 4rem;
+    max-width: 900px; margin: 0 auto;
+  }
+  .mission-hero h1 { margin-bottom: 1.2rem; }
+  .mission-hero p { font-size: 1.1rem; max-width: 620px; }
+
+  .founder-section {
+    background: var(--sand);
+    padding: 5rem 5%;
+  }
+  .founder-card {
+    max-width: 1000px; margin: 0 auto;
+    background: white; border-radius: 24px; padding: 3rem;
+    display: grid; grid-template-columns: auto 1fr; gap: 3rem;
+    align-items: start;
+  }
+  .founder-avatar {
+    width: 120px; height: 120px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--rust), var(--rust-dk));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900; color: white;
+    flex-shrink: 0;
+  }
+  .founder-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-style: italic;
+    color: var(--charcoal); line-height: 1.6; margin: 1rem 0;
+    border-left: 3px solid var(--rust); padding-left: 1.5rem;
+  }
+
+  .problem-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 3rem;
+  }
+  .stat-card {
+    background: white; border-radius: 20px; padding: 2rem;
+    text-align: center; border: 1px solid var(--sand);
+  }
+  .stat-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900; color: var(--rust);
+    display: block; line-height: 1;
+    margin-bottom: .4rem;
+  }
+  .stat-desc { font-size: .85rem; color: var(--warm-gray); line-height: 1.5; }
+
+  .traction-section { background: var(--charcoal); }
+  .traction-section h2 { color: white; }
+  .traction-section .label { color: var(--rust-lt); }
+  .traction-section p { color: rgba(255,255,255,0.6); }
+  .traction-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .traction-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 2rem; text-align: center;
+  }
+  .traction-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900;
+    color: var(--rust-lt); display: block; margin-bottom: .4rem;
+  }
+  .traction-label { color: rgba(255,255,255,0.55); font-size: .88rem; }
+
+  .roadmap-section {}
+  .roadmap {
+    margin-top: 3rem;
+    display: flex; flex-direction: column; gap: 0;
+    position: relative;
+  }
+  .roadmap::before {
+    content: ''; position: absolute;
+    left: 20px; top: 0; bottom: 0; width: 2px;
+    background: var(--sand);
+  }
+  .roadmap-item {
+    display: flex; gap: 2rem; align-items: flex-start;
+    padding: 1.5rem 0 1.5rem 0;
+    position: relative;
+  }
+  .roadmap-dot {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: white; border: 2px solid var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; z-index: 1; font-size: 1rem;
+    transition: border-color .2s;
+  }
+  .roadmap-item.active .roadmap-dot { background: var(--rust); border-color: var(--rust); }
+  .roadmap-item.active .roadmap-dot::after { content: ''; display: none; }
+  .roadmap-phase {
+    font-size: .75rem; text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 700; color: var(--rust); margin-bottom: .3rem;
+  }
+
+  .ask-section { background: var(--sand); }
+  .ask-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .ask-card {
+    background: white; border-radius: 16px; padding: 1.8rem;
+    border-left: 4px solid var(--rust);
+  }
+  .ask-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--charcoal); margin-bottom: .5rem;
+  }
+
+  .contact-section {
+    background: var(--rust); padding: 5rem 5%; text-align: center;
+  }
+  .contact-section h2 { color: white; margin-bottom: 1rem; }
+  .contact-section p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.05rem; }
+  .contact-email {
+    display: inline-block;
+    background: white; color: var(--rust);
+    font-weight: 700; font-size: 1.1rem;
+    border-radius: 50px; padding: .85rem 2rem;
+    text-decoration: none;
+    transition: transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .contact-email:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 3rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer .nav-logo-text { color: white; }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: .82rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: rgba(255,255,255,0.4); font-size: .82rem; text-decoration: none; }
+  .footer-links a:hover { color: var(--rust-lt); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 5%; }
+    .hero-visual { display: none; }
+    .steps-grid, .modes-grid, .parents-grid,
+    .problem-stats, .traction-grid, .ask-grid { grid-template-columns: 1fr; }
+    .cost-box { grid-template-columns: 1fr; }
+    .founder-card { grid-template-columns: 1fr; text-align: center; }
+    .founder-quote { border-left: none; border-top: 3px solid var(--rust); padding: 1rem 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-mark">N</div>
+    <span class="nav-logo-text">Niel Academy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('parents')" id="nav-parents">For Parents</a></li>
+    <li><a href="#" onclick="showPage('mission')" id="nav-mission">Our Mission</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="showPage('home'); scrollToDownload()">Download App</a>
+</nav>
+
+<!-- ══════════════════════════════
+     HOME PAGE
+══════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section style="background:var(--cream);">
+    <div class="hero">
+      <div class="hero-content fade-up">
+        <div class="hero-eyebrow"><span></span> Now live in Cameroon</div>
+        <h1>Every student deserves a brilliant tutor.</h1>
+        <p>Niel Academy gives African learners personalised AI tutoring aligned to their exact curriculum — so no student gets left behind in a crowded classroom.</p>
+        <div class="hero-actions">
+          <a href="#download" class="btn">↓ Download the App</a>
+          <a href="#" class="btn btn-outline" onclick="showPage('mission')">Our Mission</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">1,000+</span>
+            <span class="stat-label">Students in month 1</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">Sessions per day</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">50</span>
+            <span class="stat-label">New students daily</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up" style="transition-delay:.2s">
+        <div class="hero-blob"></div>
+        <div class="subject-chip chip-1"><span class="dot"></span> Geography GCE</div>
+        <div class="subject-chip chip-2"><span class="dot"></span> Mathematics</div>
+        <div class="subject-chip chip-3"><span class="dot"></span> Chemistry A-Level</div>
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-header"><span>Niel Academy</span><span>9:41</span></div>
+            <div class="phone-title">Geography · A Level</div>
+            <div class="phone-sub">2022 Paper 2 · Q1</div>
+            <div class="chat-bubble chat-ai">Let's start by exploring what you already know. What are the key characteristics of Tropical Rainforest Climate?</div>
+            <div class="chat-bubble chat-user">High rainfall and constant warm temperatures?</div>
+            <div class="chat-bubble chat-ai">Great start! Can you also think about what drives those rainfall patterns? Hint: think about solar angle…</div>
+            <div class="phone-input">
+              Ask Niel anything…
+              <div class="phone-send"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="section how-section">
+    <div class="section-wide fade-up">
+      <div class="label">How it works</div>
+      <h2>From exam paper to understanding — in minutes</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">📄</div>
+          <h3>Pick your paper</h3>
+          <p>Browse real past papers from the Cameroon GCE board, organised by subject, year, and level.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">🧠</div>
+          <h3>Choose your mode</h3>
+          <p>Work through questions in Understanding, Guided, or Answer mode — whatever fits how you learn today.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">📈</div>
+          <h3>Get personalised feedback</h3>
+          <p>After each session, Niel reviews your performance and tells you exactly what to strengthen before your exam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Modes -->
+  <section class="section">
+    <div class="section-wide fade-up">
+      <div class="label">Learning Modes</div>
+      <h2>One app, three ways to learn</h2>
+      <div class="modes-grid">
+        <div class="mode-card mode-understanding">
+          <div class="mode-tag">Understanding Mode</div>
+          <h3>Build problem-solving skills</h3>
+          <p style="color: var(--warm-gray); margin-top: .5rem; font-size: .92rem;">Niel guides you to the answer by asking the right questions — not just giving it to you. You'll actually understand the concept.</p>
+        </div>
+        <div class="mode-card mode-guided">
+          <div class="mode-tag">Guided Mode</div>
+          <h3>Step-by-step with explanations</h3>
+          <p style="color: var(--warm-gray); margin-top: .5rem; font-size: .92rem;">When you're stuck, Niel breaks down every part of the question into clear, manageable steps with explanations.</p>
+        </div>
+        <div class="mode-card mode-answer">
+          <div class="mode-tag">Answer Mode</div>
+          <h3>Get a quick answer</h3>
+          <p style="color: var(--warm-gray); margin-top: .5rem; font-size: .92rem;">Sometimes you just need the answer to keep your momentum going. Answer mode delivers it instantly with context.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section testimonial-section">
+    <div class="section-narrow fade-up">
+      <div class="label">The vision</div>
+      <p class="quote-large">"I built the platform I wish I had — a curriculum-aligned AI tutor designed for Cameroonian and African students."</p>
+      <p class="quote-attr">— Othniel Che, Founder · Niel Academy</p>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section class="section cta-banner" id="download">
+    <div class="section-narrow fade-up">
+      <div class="label" style="color:rgba(255,255,255,0.6)">Available now</div>
+      <h2>Start learning for free today</h2>
+      <p>Join over 1,000 students already using Niel Academy to prepare for their GCE exams.</p>
+      <div class="app-buttons">
+        <a href="#" class="app-btn">
+          <span class="app-btn-icon">🍎</span>
+          <span class="app-btn-text">
+            <span class="app-btn-sub">Download on the</span>
+            <span class="app-btn-name">App Store</span>
+          </span>
+        </a>
+        <a href="#" class="app-btn">
+          <span class="app-btn-icon">▶</span>
+          <span class="app-btn-text">
+            <span class="app-btn-sub">Get it on</span>
+            <span class="app-btn-name">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════════
+     PARENTS PAGE
+══════════════════════════════ -->
+<div id="page-parents" class="page">
+
+  <div class="parents-hero fade-up">
+    <div class="label" style="color:var(--rust-lt)">For Parents</div>
+    <h1>Give your child the support they deserve.</h1>
+    <p>We know private tutors are expensive and classrooms are overcrowded. Niel Academy is a trustworthy, affordable alternative built specifically for your child's curriculum.</p>
+    <a href="#" class="btn btn-white" onclick="showPage('home'); scrollToDownload()" style="margin-top:.5rem">Download the App</a>
+  </div>
+
+  <!-- What Niel does -->
+  <section class="section">
+    <div class="section-wide fade-up">
+      <div class="label">What Niel Academy does</div>
+      <h2>A personal tutor in your child's pocket</h2>
+      <div class="parents-grid">
+        <div class="parents-card">
+          <div class="icon-circle">📚</div>
+          <h3>Aligned to the GCE curriculum</h3>
+          <p>Every piece of content is built around the Cameroon GCE board's official past papers. Your child isn't studying the wrong material.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">🎯</div>
+          <h3>Personalised to their gaps</h3>
+          <p>After every session, Niel identifies exactly where your child struggled and what they need to review — not a generic report, a specific one.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">💡</div>
+          <h3>Builds real understanding</h3>
+          <p>Rather than just handing out answers, Niel uses a Socratic approach to help students think through problems and develop long-term skills.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">📶</div>
+          <h3>Works offline too</h3>
+          <p>Core materials can be downloaded for use without internet — so inconsistent connectivity never has to interrupt your child's studies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost comparison -->
+  <section class="section" style="background:var(--sand)">
+    <div class="section-wide fade-up">
+      <div class="label">Cost</div>
+      <h2>A fraction of traditional tutoring</h2>
+      <p style="max-width:560px; margin-top:.5rem;">Private tutors in Cameroon are simply out of reach for most families. Niel Academy makes quality academic support accessible to every household.</p>
+      <div class="cost-box">
+        <div>
+          <h3 style="margin-bottom:.8rem; font-family:'Playfair Display', serif; font-size:1.6rem;">Why affordability matters</h3>
+          <p style="color:rgba(255,255,255,0.55); line-height:1.8;">In Sub-Saharan Africa, the average family cannot afford consistent private tutoring sessions. With Niel Academy, your child gets the equivalent of one-on-one attention at a fraction of the cost — every single day.</p>
+        </div>
+        <div class="cost-compare">
+          <div class="cost-row">
+            <span class="cost-row-name">Private Tutor (per month)</span>
+            <span class="cost-row-price" style="color:rgba(255,255,255,0.4)">Out of reach</span>
+          </div>
+          <div class="cost-row">
+            <span class="cost-row-name">Other AI tools</span>
+            <span class="cost-row-price" style="color:rgba(255,255,255,0.4)">Not built for Africa</span>
+          </div>
+          <div class="cost-row highlight">
+            <span class="cost-row-name">Niel Academy</span>
+            <span class="cost-row-price">Affordable & localised ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parent concerns -->
+  <section class="section concern-section">
+    <div class="section-wide fade-up">
+      <div class="label">Common questions</div>
+      <h2>We've thought about your concerns</h2>
+      <div class="concerns-list">
+        <div class="concern-item">
+          <div class="concern-check">✓</div>
+          <div>
+            <h3 style="margin-bottom:.3rem">Will my child actually learn, or just copy answers?</h3>
+            <p>Niel's Understanding Mode is designed to prevent passive copying. The AI guides students to reason through problems themselves, only revealing full answers when explicitly requested.</p>
+          </div>
+        </div>
+        <div class="concern-item">
+          <div class="concern-check">✓</div>
+          <div>
+            <h3 style="margin-bottom:.3rem">Is it safe for my child to use?</h3>
+            <p>Niel Academy is strictly an educational tool. The AI is tuned to stay focused on academic content and is designed to be appropriate and encouraging for secondary school students.</p>
+          </div>
+        </div>
+        <div class="concern-item">
+          <div class="concern-check">✓</div>
+          <div>
+            <h3 style="margin-bottom:.3rem">My child has limited internet — will it still work?</h3>
+            <p>Yes. Core exam materials and content can be downloaded in advance and accessed offline, so your child can study even when connectivity is unreliable.</p>
+          </div>
+        </div>
+        <div class="concern-item">
+          <div class="concern-check">✓</div>
+          <div>
+            <h3 style="margin-bottom:.3rem">Is it aligned to what their school is actually teaching?</h3>
+            <p>Absolutely. All content is built directly from official Cameroon GCE past papers and structured around the same syllabus your child's teachers follow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="section cta-banner">
+    <div class="section-narrow fade-up">
+      <h2>Ready to support your child?</h2>
+      <p>Download Niel Academy and let your child experience personalised learning today.</p>
+      <div class="app-buttons">
+        <a href="#" class="app-btn">
+          <span class="app-btn-icon">🍎</span>
+          <span class="app-btn-text">
+            <span class="app-btn-sub">Download on the</span>
+            <span class="app-btn-name">App Store</span>
+          </span>
+        </a>
+        <a href="#" class="app-btn">
+          <span class="app-btn-icon">▶</span>
+          <span class="app-btn-text">
+            <span class="app-btn-sub">Get it on</span>
+            <span class="app-btn-name">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════════
+     MISSION / INVESTORS PAGE
+══════════════════════════════ -->
+<div id="page-mission" class="page">
+
+  <!-- Hero -->
+  <div class="mission-hero fade-up">
+    <div class="label">Our Mission & Vision</div>
+    <h1>Quality education shouldn't depend on where you're born.</h1>
+    <div class="divider"></div>
+    <p>Sub-Saharan Africa faces a severe teacher shortage, overcrowded classrooms, and a generation of students who deserve better. Niel Academy is building the solution — starting in Cameroon and growing across the continent.</p>
+  </div>
+
+  <!-- Problem Stats -->
+  <section class="section" style="background:var(--sand);">
+    <div class="section-wide fade-up">
+      <div class="label">The problem</div>
+      <h2>A crisis that demands action now</h2>
+      <div class="problem-stats">
+        <div class="stat-card">
+          <span class="stat-big">15M</span>
+          <p class="stat-desc">More teachers needed across Sub-Saharan Africa by 2030 to meet quality education goals <em>(UNESCO)</em></p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-big">85:1</span>
+          <p class="stat-desc">Students per teacher in some Cameroonian classrooms — making individual support nearly impossible</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-big">58:1</span>
+          <p class="stat-desc">Average pupil-to-trained-teacher ratio at primary level across the region <em>(UNESCO)</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Story -->
+  <section class="founder-section">
+    <div class="section-wide fade-up">
+      <div class="label">The founder</div>
+      <h2>Built from lived experience</h2>
+      <div class="founder-card" style="margin-top:2rem;">
+        <div class="founder-avatar">OC</div>
+        <div>
+          <h3 style="font-size:1.4rem;">Othniel Che</h3>
+          <p style="color:var(--rust); font-weight:600; margin-bottom:1rem;">Founder & Software Engineer</p>
+          <p class="founder-quote">"As a secondary school student in Cameroon, I used platforms like Khan Academy to study after school. While helpful, these tools weren't built for our curriculum, exams or context. Years later, in 2025, I watched my younger sister face the same challenges. Very little had changed."</p>
+          <p style="margin-top:1rem;">As a software engineer already working with AI, Othniel decided to build the platform he wished he had. Niel Academy is the result — a curriculum-aligned AI tutor designed specifically for Cameroonian and African students, built with pedagogy and affordability at its core.</p>
+          <p style="margin-top:.8rem; color: var(--rust); font-weight:600;">cheothniel@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traction -->
+  <section class="section traction-section">
+    <div class="section-wide fade-up">
+      <div class="label">Traction</div>
+      <h2>Early proof it's working</h2>
+      <p style="margin-top:.5rem; max-width:500px;">Launched in 2025 and already growing organically, with new students joining every day.</p>
+      <div class="traction-grid">
+        <div class="traction-card">
+          <span class="traction-num">1,000+</span>
+          <span class="traction-label">Students learning in the first month</span>
+        </div>
+        <div class="traction-card">
+          <span class="traction-num">200+</span>
+          <span class="traction-label">Interactive learning sessions per day</span>
+        </div>
+        <div class="traction-card">
+          <span class="traction-num">9–50</span>
+          <span class="traction-label">New students joining every single day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Now -->
+  <section class="section">
+    <div class="section-wide fade-up">
+      <div class="label">Why Now</div>
+      <h2>The window to act is open</h2>
+      <div class="parents-grid" style="margin-top:2rem;">
+        <div class="parents-card">
+          <div class="icon-circle">📱</div>
+          <h3>Mobile penetration is rising</h3>
+          <p>Smartphone access across Sub-Saharan Africa is growing rapidly, opening a distribution channel to learners who were previously unreachable.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">🤖</div>
+          <h3>Generative AI makes 1:1 tutoring affordable</h3>
+          <p>Until now, personalised tutoring at scale was economically impossible. Generative AI changes that — and Niel Academy is built to leverage it responsibly.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">📉</div>
+          <h3>Teacher shortages are worsening</h3>
+          <p>The gap between demand for quality education and the supply of trained teachers is growing. Technology-assisted learning is no longer optional — it's essential.</p>
+        </div>
+        <div class="parents-card">
+          <div class="icon-circle">🌍</div>
+          <h3>Students already use AI — badly</h3>
+          <p>Learners across Africa are already turning to generic AI tools for help. Niel Academy gives them a localised, pedagogy-first alternative built for their context.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="section" style="background:var(--sand);">
+    <div class="section-wide fade-up">
+      <div class="label">Roadmap</div>
+      <h2>Where we're going</h2>
+      <div class="roadmap">
+        <div class="roadmap-item active">
+          <div class="roadmap-dot">✓</div>
+          <div>
+            <div class="roadmap-phase">Now · Cameroon GCE</div>
+            <h3>Exam prep for Cameroon GCE (A-Level & O-Level)</h3>
+            <p>Live and growing. Students practice real past papers with AI tutoring across core subjects.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot" style="font-size:.7rem; color:var(--rust);">→</div>
+          <div>
+            <div class="roadmap-phase">Next · Expand coverage</div>
+            <h3>More subjects, languages, and national exam boards</h3>
+            <p>Onboard WAEC and other Sub-Saharan African exam boards. Add French language support for Francophone learners.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot" style="font-size:.7rem; color:var(--rust);">→</div>
+          <div>
+            <div class="roadmap-phase">Future · Full curriculum tutor</div>
+            <h3>From exam prep to full daily learning companion</h3>
+            <p>Move beyond exam practice to cover the entire school curriculum — a personalised AI tutor for every learner in Africa and the Global South.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-dot" style="font-size:.7rem; color:var(--rust);">→</div>
+          <div>
+            <div class="roadmap-phase">Vision · Systemic change</div>
+            <h3>Partnerships with exam boards, NGOs, and governments</h3>
+            <p>Institutionalise access to quality AI tutoring as a complement to public education systems across the continent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Seeking -->
+  <section class="section ask-section">
+    <div class="section-wide fade-up">
+      <div class="label">For Investors & Partners</div>
+      <h2>What we're seeking</h2>
+      <p style="max-width:580px; margin-top:.5rem;">Niel Academy is at an inflection point. With early traction proven, we're looking for partners who share our belief that every African student deserves a brilliant tutor.</p>
+      <div class="ask-grid">
+        <div class="ask-card">
+          <h4>💰 Seed Funding</h4>
+          <p>To scale content acquisition and curriculum coverage, expand infrastructure, and serve learners reliably at greater volume.</p>
+        </div>
+        <div class="ask-card">
+          <h4>🌍 Regional Expansion Support</h4>
+          <p>Help expanding into new countries, exam boards, and languages — starting with WAEC and Francophone Africa.</p>
+        </div>
+        <div class="ask-card">
+          <h4>🤝 Education Partnerships</h4>
+          <p>Relationships with education NGOs, schools, exam boards, and telcos to accelerate access and distribution.</p>
+        </div>
+        <div class="ask-card">
+          <h4>🧭 Responsible AI Mentorship</h4>
+          <p>Guidance on scaling AI responsibly in low-resource contexts — ensuring the technology serves students ethically and effectively.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <div class="section-narrow fade-up">
+      <div class="label" style="color:rgba(255,255,255,0.6)">Get in touch</div>
+      <h2>Let's build this together</h2>
+      <p>Whether you're an investor, NGO, school, or just believe in the mission — we'd love to hear from you.</p>
+      <a href="mailto:cheothniel@gmail.com" class="contact-email">cheothniel@gmail.com</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-mark">N</div>
+    <span class="nav-logo-text">Niel Academy</span>
+  </a>
+  <span class="footer-copy">© 2025 Niel Academy. Built in Cameroon for Africa.</span>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('parents')">For Parents</a>
+    <a href="#" onclick="showPage('mission')">Mission</a>
+    <a href="mailto:cheothniel@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Page navigation
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.getElementById('nav-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Re-trigger animations
+    setTimeout(() => {
+      document.querySelectorAll('#page-' + name + ' .fade-up').forEach(el => {
+        el.classList.remove('visible');
+      });
+      requestAnimationFrame(() => observeFadeUps());
+    }, 50);
+    return false;
+  }
+
+  function scrollToDownload() {
+    setTimeout(() => {
+      const el = document.getElementById('download');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
+  // Scroll animations
+  function observeFadeUps() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+  }
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  observeFadeUps();
+</script>
+</body>
+</html>

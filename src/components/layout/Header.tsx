@@ -1,186 +1,134 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Button } from '../ui/button';
-import { MenuIcon } from 'lucide-react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
+import { Link, useLocation } from "react-router-dom";
+import { MenuIcon } from "lucide-react";
+import { Button } from "../ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
+import { site } from "@/lib/site";
 
-export interface NavItem {
-  path: string;
-  label: string;
-}
+const navItems = [
+  { path: "/", label: "Home" },
+  { path: "/parents", label: "For Parents" },
+  { path: "/about", label: "Our Mission" },
+  { path: "/contact", label: "Contact" },
+] as const;
 
-export interface LogoConfig {
-  src: string;
-  alt: string;
-  to?: string;
-  className?: string;
-}
-
-export interface CTAConfig {
-  label: string;
-  onClick?: () => void;
-  to?: string;
-  className?: string;
-}
-
-export interface HeaderProps {
-  logo?: LogoConfig;
-  navItems?: NavItem[];
-  cta?: CTAConfig;
-  className?: string;
-  mobileMenuTitle?: string;
-}
-
-const defaultLogo: LogoConfig = {
-  src: '/images/long-logo.png',
-  alt: 'Niel Academy',
-  to: '/',
-  className: 'h-13 w-auto',
-};
-
-const defaultNavItems: NavItem[] = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/parents', label: 'Parents' },
-  { path: '/contact', label: 'Contact' },
-  { path: '/privacy-policy', label: 'Privacy Policy' },
-];
-
-const defaultCTA: CTAConfig = {
-  label: 'Get Started',
-};
-
-interface NavLinkProps {
-  item: NavItem;
-  isActive: boolean;
-  variant?: 'desktop' | 'mobile';
-}
-
-function NavLink({ item, isActive, variant = 'desktop' }: NavLinkProps) {
-  if (variant === 'mobile') {
-    return (
-      <Link
-        to={item.path}
-        className={`px-4 py-4 text-lg font-medium rounded-lg transition-colors duration-300 font-roboto-regular ${
-          isActive
-            ? 'text-black font-roboto-semibold'
-            : 'text-neutral-600 hover:text-black font-roboto-regular hover:bg-neutral-50'
-        }`}
-      >
-        {item.label}
-      </Link>
-    );
-  }
-
+function Wordmark() {
   return (
-    <Link
-      to={item.path}
-      className={`px-3 py-2 text-sm font-medium relative group transition-colors duration-300 ${
-        isActive ? 'text-black' : 'text-neutral-600 hover:text-black'
-      }`}
-    >
-      {item.label}
-      <span
-        className={`absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300 ease-in-out ${
-          isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-        }`}
-      ></span>
-    </Link>
+    <div className="flex items-center gap-2">
+      <div className="size-9 rounded-xl bg-brand-primary text-white grid place-items-center font-semibold tracking-tight">
+        N
+      </div>
+      <div className="leading-tight">
+        <div className="text-sm text-neutral-900 font-semibold">Niel Academy</div>
+        <div className="text-xs text-neutral-600">Curriculum-aligned AI tutoring</div>
+      </div>
+    </div>
   );
 }
 
-function CTAButton({ cta }: { cta: CTAConfig }) {
-  const buttonClassName = cta.className || 'bg-black rounded-xl h-10 text-white hover:opacity-90';
-  const buttonContent = <>{cta.label}</>;
-
-  if (cta.to) {
-    return (
-      <Link to={cta.to}>
-        <Button className={buttonClassName}>{buttonContent}</Button>
-      </Link>
-    );
-  }
-
-  return (
-    <Button className={buttonClassName} onClick={cta.onClick}>
-      {buttonContent}
-    </Button>
-  );
-}
-
-export function Header({
-  logo = defaultLogo,
-  navItems = defaultNavItems,
-  cta = defaultCTA,
-  className = '',
-  mobileMenuTitle = 'Menu',
-}: HeaderProps) {
+function DesktopNav() {
   const location = useLocation();
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  return (
+    <nav className="hidden md:flex items-center gap-1">
+      {navItems.map((item) => {
+        const active = location.pathname === item.path;
+        return (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={[
+              "rounded-full px-4 py-2 text-sm transition-colors",
+              active ? "bg-brand-card text-neutral-900" : "text-neutral-700 hover:bg-brand-card/60",
+            ].join(" ")}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+}
 
-  const logoLink = logo.to || '/';
+function DownloadCta({ className = "" }: { className?: string }) {
+  return (
+    <a
+      href={site.playStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={[
+        "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white",
+        "bg-black hover:opacity-95 transition-opacity",
+        className,
+      ].join(" ")}
+    >
+      Download app
+    </a>
+  );
+}
+
+export function Header() {
+  const location = useLocation();
 
   return (
-    <header className={`sticky top-0 z-50 bg-brand-background ${className}`}>
-      <div className="mx-auto px-1 lg:px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to={logoLink} className="flex items-center gap-3">
+    <header className="sticky top-0 z-50">
+      <div className="bg-brand-background/90 backdrop-blur supports-[backdrop-filter]:bg-brand-background/75  border-neutral-200/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+          <Link to="/" aria-label="Niel Academy home" className="shrink-0">
             <img
-              src={logo.src}
-              alt={logo.alt}
-              className={logo.className || 'h-13 w-auto'}
+              src="/images/long-logo.png"
+              alt="Niel Academy logo"
+              className="hidden md:inline w-auto h-15"
+            />
+            <img
+              src="/images/logo.png"
+              alt="Niel Academy logo"
+              className="inline md:hidden size-8"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1 absolute left-1/2 transform -translate-x-1/2">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                item={item}
-                isActive={isActive(item.path)}
-                variant="desktop"
-              />
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <DesktopNav />
+          </div>
 
-          {/* Mobile Menu */}
-          <div className="md:hidden flex justify-end">
+          <div className="hidden md:block">
+            <DownloadCta />
+          </div>
+
+          <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" className="h-12 w-12 p-2">
-                  <MenuIcon size={20} className="text-neutral-600 hover:text-black" />
+                <Button variant="ghost" className="h-10 w-10 p-0">
+                  <MenuIcon size={20} className="text-neutral-700" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-80 bg-brand-background">
-                <SheetHeader className="pb-6">
-                  <SheetTitle className="text-left text-xl font-roboto-bold text-neutral-900">
-                    {mobileMenuTitle}
-                  </SheetTitle>
+                <SheetHeader className="pb-4">
+                  <SheetTitle className="text-left text-lg text-neutral-900">Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col space-y-2">
-                  {navItems.map((item) => (
-                    <NavLink
-                      key={item.path}
-                      item={item}
-                      isActive={isActive(item.path)}
-                      variant="mobile"
-                    />
-                  ))}
+
+                <nav className="flex flex-col gap-1">
+                  {navItems.map((item) => {
+                    const active = location.pathname === item.path;
+                    return (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={[
+                          "rounded-xl px-4 py-3 text-base transition-colors",
+                          active ? "bg-brand-card text-neutral-900" : "text-neutral-700 hover:bg-brand-card/60",
+                        ].join(" ")}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
                 </nav>
-                <div className="w-full mt-8 pt-6 border-t border-neutral-400">
-                  <CTAButton cta={{ ...cta, className: ' mx-2.5 lg:mx-0 bg-black rounded-xl h-12 text-white hover:opacity-90 font-roboto-semibold' }} />
+
+                <div className="pt-6 mt-6 border-t border-neutral-200/70">
+                  <DownloadCta className="w-full" />
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
-
-          {/* Desktop CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <CTAButton cta={cta} />
           </div>
         </div>
       </div>

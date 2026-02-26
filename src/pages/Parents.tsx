@@ -1,161 +1,207 @@
-import { Link } from "react-router-dom";
-import { CheckCircle2, Brain, BookOpen, FileQuestion, WifiOff } from "lucide-react";
+import { ShieldCheck, WifiOff, BookOpen, Target, Sparkles } from "lucide-react";
+import { site } from "@/lib/site";
 
 export function Parents() {
   return (
-    <div className="flex-1 w-full h-full">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="prose prose-lg max-w-none">
-          {/* Header */}
-          <h1 className="text-4xl font-bold text-neutral-900 mb-2 font-roboto-bold text-center">
-            For <span className="font-light font-serif">Parents</span>
-          </h1>
-          <p className="text-2xl font-semibold text-neutral-900 mb-6 font-roboto-semibold text-center">
-            Help your child understand, not just memorize
-          </p>
-
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light text-center max-w-3xl mx-auto">
-            Passing one exam matters. So does whether your child can think through problems and solve them on their own. Niel Academy helps students build deeper understanding and confidence for exams like the GCE and TVEE.
-          </p>
-
-          {/* The Problem */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-12 font-roboto-semibold">
-            What many parents see
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            You might notice your child:
-          </p>
-          <ul className="space-y-3 mb-6">
-            <li className="flex items-start gap-3 text-neutral-700 font-serif font-light">
-              <span className="text-neutral-400 mt-1">•</span>
-              <span>Studies for long hours but still struggles in exams</span>
-            </li>
-            <li className="flex items-start gap-3 text-neutral-700 font-serif font-light">
-              <span className="text-neutral-400 mt-1">•</span>
-              <span>Memorizes solutions without getting why they work</span>
-            </li>
-            <li className="flex items-start gap-3 text-neutral-700 font-serif font-light">
-              <span className="text-neutral-400 mt-1">•</span>
-              <span>Gets stuck when questions are phrased differently</span>
-            </li>
-            <li className="flex items-start gap-3 text-neutral-700 font-serif font-light">
-              <span className="text-neutral-400 mt-1">•</span>
-              <span>Relies heavily on teachers or tutors to move forward</span>
-            </li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            That doesn&apos;t mean your child is lazy or incapable. Often it means they were never shown how to think through problems.
-          </p>
-
-          {/* How Niel Academy Helps */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            How Niel Academy helps
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-6 font-serif font-light">
-            Most learning tools give answers. We help students learn how to get there.
-          </p>
-
-          <div className="space-y-8 mb-12">
-            <div className="rounded-2xl p-6 border border-border bg-brand-background/30">
-              <div className="flex items-center gap-2 mb-3">
-                <Brain className="size-5 text-brand-primary" />
-                <h3 className="text-lg font-semibold text-neutral-900 font-roboto-semibold">Understanding Mode</h3>
-              </div>
-              <p className="text-neutral-700 font-serif font-light mb-3">Our main approach: they try to solve a problem first. The app asks guiding questions to build reasoning. Answers show up only after genuine effort. That can build critical thinking and independence.</p>
-              <ul className="space-y-2 text-neutral-600 font-serif text-sm">
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Child attempts the problem first</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Guiding questions develop reasoning</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-brand-primary shrink-0" /> Answers appear only after effort</li>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl p-6 border border-border bg-brand-background/30">
-              <div className="flex items-center gap-2 mb-3">
-                <BookOpen className="size-5 text-brand-primary" />
-                <h3 className="text-lg font-semibold text-neutral-900 font-roboto-semibold">Guided help when stuck</h3>
-              </div>
-              <p className="text-neutral-700 font-serif font-light">Stuck? They can switch to a mode that walks them through the problem.</p>
-            </div>
-
-            <div className="rounded-2xl p-6 border border-border bg-brand-background/30">
-              <div className="flex items-center gap-2 mb-3">
-                <FileQuestion className="size-5 text-brand-primary" />
-                <h3 className="text-lg font-semibold text-neutral-900 font-roboto-semibold">Past exam questions</h3>
-              </div>
-              <p className="text-neutral-700 font-serif font-light">Practice with official GCE and TVEE past papers, not random questions that don&apos;t match their exams.</p>
-            </div>
-
-            <div className="rounded-2xl p-6 border border-border bg-brand-background/30">
-              <div className="flex items-center gap-2 mb-3">
-                <WifiOff className="size-5 text-brand-primary" />
-                <h3 className="text-lg font-semibold text-neutral-900 font-roboto-semibold">Works online or offline</h3>
-              </div>
-              <p className="text-neutral-700 font-serif font-light">Core materials work offline. Learning can continue even with spotty internet.</p>
-            </div>
-          </div>
-
-          {/* What Your Child Gains */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            What your child gains
-          </h2>
-          <ul className="list-disc pl-6 space-y-2 mb-4 text-neutral-700 font-serif font-light">
-            <li>Stronger reasoning skills</li>
-            <li>Better exam performance</li>
-            <li>More confidence in class</li>
-            <li>Less reliance on cramming</li>
-            <li>A sense of ownership over their learning</li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            These skills go beyond one exam. They help throughout their education.
-          </p>
-
-          {/* Built for Cameroonian Students */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Built for Cameroonian students
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            Unlike generic global apps, Niel Academy is built around:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mb-4 text-neutral-700 font-serif font-light">
-            <li>The Cameroonian syllabus</li>
-            <li>GCE and TVEE exam formats</li>
-            <li>How students actually study locally</li>
-            <li>Mobile-first access</li>
-          </ul>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            Materials match what they&apos;ll face in school and national exams.
-          </p>
-
-          {/* Affordable */}
-          <h2 className="text-2xl font-semibold text-neutral-900 mb-4 mt-8 font-roboto-semibold">
-            Affordable and accessible
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-4 font-serif font-light">
-            We believe past papers and core materials should be available to every student. That&apos;s why core content is free. Optional paid features add AI-powered support for those who want it.
-          </p>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-12 font-serif font-light">
-            Learning can continue even if private tutoring isn&apos;t an option.
-          </p>
-
-          {/* CTA */}
-          <div className="rounded-2xl p-8 mt-12 border border-border bg-card">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-4 font-roboto-semibold">
-              Get your child started
-            </h3>
-            <p className="text-neutral-700 font-serif font-light mb-6">
-              Move from memorizing to deeper understanding.
+    <div className="w-full">
+      {/* Hero */}
+      <section className="bg-neutral-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-24 -right-24 size-[420px] rounded-full bg-brand-primary/14 blur-2xl" />
+          <div className="absolute -bottom-32 -left-32 size-[520px] rounded-full bg-brand-primary/10 blur-2xl" />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative">
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">For Parents</div>
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl">Give your child the support they deserve.</h1>
+            <p className="mt-5 text-white/80 text-lg leading-relaxed">
+              We know private tutors are expensive and classrooms are overcrowded. Niel Academy is a trustworthy,
+              affordable alternative built specifically for your child’s curriculum.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Link
-                to="https://play.google.com/store/apps/details?id=com.nielacademy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/images/getOnPlayStore.svg" alt="Download on Play Store" className="h-12" />
-              </Link>
-              <p className="text-sm text-neutral-600 font-serif">Let them try Understanding Mode today.</p>
+            <div className="mt-8">
+              <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-20" />
+              </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* What Niel does */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">What Niel Academy does</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">A personal tutor in your child’s pocket</h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+              <BookOpen className="size-5" />
+            </div>
+            <h3 className="mt-4 text-lg text-neutral-900">Aligned to the GCE curriculum</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Content is built around official past papers so your child isn’t studying the wrong material.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+              <Target className="size-5" />
+            </div>
+            <h3 className="mt-4 text-lg text-neutral-900">Personalised to their gaps</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              After each session, Niel highlights where they struggled and what to review next.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+              <Sparkles className="size-5" />
+            </div>
+            <h3 className="mt-4 text-lg text-neutral-900">Builds deeper understanding</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Understanding Mode uses a Socratic approach so students learn to think instead of copying answers.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
+              <WifiOff className="size-5" />
+            </div>
+            <h3 className="mt-4 text-lg text-neutral-900">Works offline too</h3>
+            <p className="mt-3 text-neutral-700 leading-relaxed">
+              Core materials can be downloaded so inconsistent internet doesn’t interrupt studying.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cost */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="rounded-3xl bg-black text-white overflow-hidden relative">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-28 -left-28 size-[420px] rounded-full bg-white/6 blur-2xl" />
+            <div className="absolute -bottom-28 -right-28 size-[420px] rounded-full bg-black/10 blur-2xl" />
+          </div>
+          <div className="relative p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7">
+              <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Cost</div>
+              <h2 className="mt-3 text-3xl sm:text-4xl">A fraction of traditional tutoring</h2>
+              <p className="mt-4 text-white/85 leading-relaxed max-w-xl">
+                Private tutors can be out of reach for many families. Niel Academy makes quality academic support
+                accessible at home every day.
+              </p>
+              <h3 className="mt-8 text-xl">Why affordability matters</h3>
+              <p className="mt-3 text-white/80 leading-relaxed">
+                When support is affordable, students get consistent help instead of occasional sessions. That
+                consistency is where confidence and results often improve.
+              </p>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl bg-white/10 border border-white/15 p-6">
+                <div className="flex items-center justify-between py-3 border-b border-white/15">
+                  <div className="text-white/80">Private Tutor (monthly)</div>
+                  <div className="font-semibold">Often expensive</div>
+                </div>
+                <div className="flex items-center justify-between py-3 border-b border-white/15">
+                  <div className="text-white/80">Other generic AI tools</div>
+                  <div className="font-semibold">Not built for your exam</div>
+                </div>
+                <div className="flex items-center justify-between py-3">
+                  <div className="text-white/80">Niel Academy</div>
+                  <div className="font-semibold">Affordable & localised</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Concerns */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Common questions</div>
+          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">We’ve thought about your concerns</h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group" open>
+            <summary className="cursor-pointer list-none flex items-start gap-3">
+              <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
+                <ShieldCheck className="size-5" />
+              </div>
+              <div>
+                <div className="text-lg text-neutral-900">Will my child actually learn, or just copy answers?</div>
+                <div className="text-sm text-neutral-600 mt-1 group-open:hidden">Read the answer</div>
+              </div>
+            </summary>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Understanding Mode is designed to prevent passive copying. The AI guides students to reason through
+              problems, and full answers appear when explicitly requested.
+            </p>
+          </details>
+
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+            <summary className="cursor-pointer list-none flex items-start gap-3">
+              <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
+                <ShieldCheck className="size-5" />
+              </div>
+              <div>
+                <div className="text-lg text-neutral-900">Is it safe for my child to use?</div>
+                <div className="text-sm text-neutral-600 mt-1 group-open:hidden">Read the answer</div>
+              </div>
+            </summary>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Niel Academy is strictly an educational tool. It’s tuned to stay focused on academic content and be
+              appropriate and encouraging for secondary school students.
+            </p>
+          </details>
+
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+            <summary className="cursor-pointer list-none flex items-start gap-3">
+              <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
+                <WifiOff className="size-5" />
+              </div>
+              <div>
+                <div className="text-lg text-neutral-900">My child has limited internet. Will it still work?</div>
+                <div className="text-sm text-neutral-600 mt-1 group-open:hidden">Read the answer</div>
+              </div>
+            </summary>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Yes. Core materials can be downloaded in advance and accessed offline, so studying can continue even
+              when connectivity is unreliable.
+            </p>
+          </details>
+
+          <details className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6 group">
+            <summary className="cursor-pointer list-none flex items-start gap-3">
+              <div className="size-10 rounded-2xl bg-brand-card grid place-items-center text-neutral-900 shrink-0">
+                <BookOpen className="size-5" />
+              </div>
+              <div>
+                <div className="text-lg text-neutral-900">Is it aligned to what their school is teaching?</div>
+                <div className="text-sm text-neutral-600 mt-1 group-open:hidden">Read the answer</div>
+              </div>
+            </summary>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Yes. Content is built directly from official past papers and structured around the same syllabus
+              students follow in school.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="rounded-3xl bg-brand-background/60 border border-neutral-200/70 p-10 lg:p-14 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl text-neutral-900">Ready to support your child?</h2>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Download Niel Academy and let your child experience personalised learning at home.
+            </p>
+          </div>
+          <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
+            <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-12" />
+          </a>
         </div>
       </section>
     </div>
