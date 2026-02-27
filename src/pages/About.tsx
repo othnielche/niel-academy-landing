@@ -238,7 +238,7 @@ export function About() {
             </p>
           </div>
           <a
-            href={`mailto:${site.emails.founderPersonal}`}
+            href={`mailto:${site.emails.founderWork}`}
             className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-white hover:opacity-95 transition-opacity text-black" 
           >
             Email us
