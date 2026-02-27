@@ -87,12 +87,31 @@ export function Header() {
                   <MenuIcon size={20} className="text-neutral-700" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-brand-background">
+              <SheetContent
+                side="right"
+                className="w-80 bg-brand-background/95 backdrop-blur-md border-l border-neutral-200/80 flex flex-col"
+              >
                 <SheetHeader className="pb-4">
-                  <SheetTitle className="text-left text-lg text-neutral-900">Menu</SheetTitle>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <img
+                        src="/images/logo.png"
+                        alt="Niel Academy logo"
+                        className="size-7 rounded-lg"
+                      />
+                      <div className="leading-tight">
+                        <SheetTitle className="text-base text-neutral-900">
+                          Niel Academy
+                        </SheetTitle>
+                        <p className="text-xs text-neutral-600">
+                          AI tutoring for African learners
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </SheetHeader>
 
-                <nav className="flex flex-col gap-1">
+                <nav className="flex flex-col gap-1 mt-2">
                   {navItems.map((item) => {
                     const active = location.pathname === item.path;
                     return (
@@ -100,8 +119,10 @@ export function Header() {
                         key={item.path}
                         to={item.path}
                         className={[
-                          "rounded-xl px-4 py-3 text-base transition-colors",
-                          active ? "bg-brand-card text-neutral-900" : "text-neutral-700 hover:bg-brand-card/60",
+                          "rounded-2xl px-4 py-3 text-base transition-colors flex items-center",
+                          active
+                            ? "bg-neutral-900 text-brand-background"
+                            : "text-neutral-800 hover:bg-neutral-900/5",
                         ].join(" ")}
                       >
                         {item.label}
