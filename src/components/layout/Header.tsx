@@ -1,27 +1,46 @@
 import { Link, useLocation } from "react-router-dom";
 import { MenuIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
+import { LanguageSelector, LanguageSelectorCompact } from "../ui/LanguageSelector";
 import { site } from "@/lib/site";
 
-const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/parents", label: "For Parents" },
-  { path: "/about", label: "Our Mission" },
-  { path: "/contact", label: "Contact" },
-] as const;
+function getNavItems(t: any) {
+  return [
+    { path: "/", label: t('navigation.home') },
+    { path: "/demo", label: t('navigation.demo') },
+    { path: "/parents", label: t('navigation.parents') },
+    { path: "/about", label: t('navigation.mission') },
+    { path: "/contact", label: t('navigation.contact') },
+  ] as const;
+}
 
 function DesktopNav() {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+  
+  const navItems = getNavItems(t);
+
+  const getCurrentPath = (itemPath: string) => {
+    if (i18n.language === 'fr' && !location.pathname.startsWith('/fr')) {
+      return `/fr${itemPath}`;
+    } else if (i18n.language === 'en' && location.pathname.startsWith('/fr')) {
+      return itemPath;
+    }
+    return itemPath;
+  };
 
   return (
     <nav className="hidden md:flex items-center gap-1">
       {navItems.map((item) => {
-        const active = location.pathname === item.path;
+        const itemPath = getCurrentPath(item.path);
+        const active = location.pathname === itemPath || 
+                     (item.path === "/" && (location.pathname === "/" || location.pathname === "/fr"));
         return (
           <Link
             key={item.path}
-            to={item.path}
+            to={itemPath}
             className={[
               "rounded-full px-4 py-2 text-sm transition-colors",
               active ? "bg-brand-card text-neutral-900" : "text-neutral-700 hover:bg-brand-card/60",
@@ -36,6 +55,8 @@ function DesktopNav() {
 }
 
 function DownloadCta({ className = "" }: { className?: string }) {
+  const { t } = useTranslation();
+  
   return (
     <a
       href={site.playStoreUrl}
@@ -47,13 +68,25 @@ function DownloadCta({ className = "" }: { className?: string }) {
         className,
       ].join(" ")}
     >
-      Download app
+      {t('navigation.downloadApp')}
     </a>
   );
 }
 
 export function Header() {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const navItems = getNavItems(t);
+
+  const getCurrentPath = (itemPath: string) => {
+    if (i18n.language === 'fr' && !location.pathname.startsWith('/fr')) {
+      return `/fr${itemPath}`;
+    } else if (i18n.language === 'en' && location.pathname.startsWith('/fr')) {
+      return itemPath;
+    }
+    return itemPath;
+  };
 
   return (
     <header className="sticky top-0 z-50">
@@ -76,7 +109,8 @@ export function Header() {
             <DesktopNav />
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSelector />
             <DownloadCta />
           </div>
 
@@ -113,11 +147,13 @@ export function Header() {
 
                 <nav className="flex flex-col gap-1 mt-2">
                   {navItems.map((item) => {
-                    const active = location.pathname === item.path;
+                    const itemPath = getCurrentPath(item.path);
+                    const active = location.pathname === itemPath || 
+                                 (item.path === "/" && (location.pathname === "/" || location.pathname === "/fr"));
                     return (
                       <Link
                         key={item.path}
-                        to={item.path}
+                        to={itemPath}
                         className={[
                           "rounded-2xl px-4 py-3 text-base transition-colors flex items-center",
                           active
@@ -131,7 +167,10 @@ export function Header() {
                   })}
                 </nav>
 
-                <div className="pt-6 mt-6 border-t border-neutral-200/70">
+                <div className="pt-6 mt-6 border-t border-neutral-200/70 space-y-4">
+                  <div className="flex justify-center">
+                    <LanguageSelectorCompact />
+                  </div>
                   <DownloadCta className="w-full" />
                 </div>
               </SheetContent>

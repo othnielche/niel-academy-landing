@@ -6,11 +6,11 @@
 export const colors = {
   // Brand Colors
   brand: {
-    primary: '#D97757',
-    secondary: '#7c3aed',
-    accent: '#f59e0b',
+    primary: '#171717',
+    secondary: '#404040',
+    accent: '#525252',
     success: '#10b981',
-    warning: '#f59e0b',
+    warning: '#525252',
     error: '#ef4444',
   },
   

@@ -56,7 +56,7 @@ export function TestimonialsColumn(props: {
                         <AvatarImage src={image} alt={name} />
                         <AvatarFallback
                           className={cn(
-                            "bg-brand-primary/10 text-brand-primary text-sm font-medium"
+                            "bg-neutral-100 text-neutral-900 text-sm font-medium"
                           )}
                         >
                           {getInitials(name)}

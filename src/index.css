@@ -152,13 +152,13 @@
   --color-sidebar-ring: var(--sidebar-ring);
   
   /* Brand Colors for Niel Academy */
-  --color-brand-primary: #D97757;
+  --color-brand-primary: #171717;
   --color-brand-background: #F1EEE7;
   --color-brand-card: #E3DACB;
-  --color-brand-secondary: #7c3aed;
-  --color-brand-accent: #f59e0b;
+  --color-brand-secondary: #404040;
+  --color-brand-accent: #525252;
   --color-brand-success: #10b981;
-  --color-brand-warning: #f59e0b;
+  --color-brand-warning: #525252;
   --color-brand-error: #ef4444;
   
   /* Neutral Colors */

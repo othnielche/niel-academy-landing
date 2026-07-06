@@ -1,36 +1,35 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Brain,
   FileText,
   LineChart,
   MessageSquareQuote,
   MoveRight,
+  Play,
+  CheckCircle,
+  ArrowRight,
+  Target,
+  BookOpen,
+  FileCheck,
 } from "lucide-react";
 import { site } from "@/lib/site";
 
 export function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-0 -right-39 size-[420px] rounded-full bg-brand-primary/10 blur-1xl" />
-          <div className="absolute -bottom-0 -left-40 size-[520px] rounded-full bg-brand-primary/10 blur-1xl" />
-        </div>
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <section>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
-              {/* <div className="inline-flex items-center gap-2 rounded-full bg-brand-card/60 px-4 py-2 text-sm text-neutral-800">
-                <span className="inline-block size-2 rounded-full bg-brand-primary" />
-                Now live in Cameroon
-              </div> */}
               <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl text-neutral-900 tracking-tight">
-                Every student deserves a brilliant tutor.
+                {t('hero.headline')}
               </h1>
               <p className="mt-5 text-lg sm:text-xl text-neutral-700 leading-relaxed max-w-2xl">
-                Niel Academy gives African learners personalised AI tutoring aligned to their exact curriculum, so
-                no student gets left behind in a crowded classroom.
+                {t('hero.subheading')}
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -38,25 +37,32 @@ export function Home() {
                   <img src="/images/getOnPlayStore.svg" alt="Get it on Google Play" className="h-20" />
                 </a>
                 <Link
+                  to="/demo"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-neutral-950 transition-colors"
+                >
+                  <Play className="size-4" />
+                  {t('hero.watchDemo')}
+                </Link>
+                <Link
                   to="/about"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-neutral-950 transition-colors"
                 >
-                  Our mission <MoveRight className="size-4" />
+                  {t('hero.ourMission')} <MoveRight className="size-4" />
                 </Link>
               </div>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl">
                 <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
-                  <div className="text-sm font-semibold text-neutral-900">Curriculum-aligned</div>
-                  <div className="text-sm text-neutral-600 mt-1">Built for what you’re actually learning.</div>
+                  <div className="text-sm font-semibold text-neutral-900">{t('hero.features.curriculumAligned.title')}</div>
+                  <div className="text-sm text-neutral-600 mt-1">{t('hero.features.curriculumAligned.description')}</div>
                 </div>
                 <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
-                  <div className="text-sm font-semibold text-neutral-900">Three learning modes</div>
-                  <div className="text-sm text-neutral-600 mt-1">Understanding, Guided, or Answer.</div>
+                  <div className="text-sm font-semibold text-neutral-900">{t('hero.features.threeModes.title')}</div>
+                  <div className="text-sm text-neutral-600 mt-1">{t('hero.features.threeModes.description')}</div>
                 </div>
                 <div className="rounded-2xl bg-white/60 border border-neutral-200/70 px-4 py-4">
-                  <div className="text-sm font-semibold text-neutral-900">Personal feedback</div>
-                  <div className="text-sm text-neutral-600 mt-1">Know what to fix before the exam.</div>
+                  <div className="text-sm font-semibold text-neutral-900">{t('hero.features.personalFeedback.title')}</div>
+                  <div className="text-sm text-neutral-600 mt-1">{t('hero.features.personalFeedback.description')}</div>
                 </div>
               </div>
             </div>
@@ -77,9 +83,8 @@ export function Home() {
       {/* How it works */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">How it works</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">
-            From exam paper to understanding, in minutes
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">
+            {t('howItWorks.title')}
           </h2>
         </div>
 
@@ -89,10 +94,10 @@ export function Home() {
               <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
                 <FileText className="size-5" />
               </div>
-              <div className="text-lg font-semibold text-neutral-900">Pick your paper</div>
+              <div className="text-lg font-semibold text-neutral-900">{t('howItWorks.steps.pickPaper.title')}</div>
             </div>
             <p className="mt-4 text-neutral-700 leading-relaxed">
-              Browse official past papers from the Cameroon GCE board, organised by subject, year, and level.
+              {t('howItWorks.steps.pickPaper.description')}
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
@@ -100,23 +105,106 @@ export function Home() {
               <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
                 <Brain className="size-5" />
               </div>
-              <div className="text-lg font-semibold text-neutral-900">Choose your mode</div>
+              <div className="text-lg font-semibold text-neutral-900">{t('howItWorks.steps.chooseMode.title')}</div>
             </div>
             <p className="mt-4 text-neutral-700 leading-relaxed">
-              Work through questions in Understanding, Guided, or Answer mode, depending on how you want to learn
-              that day.
+              {t('howItWorks.steps.chooseMode.description')}
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
             <div className="flex items-center gap-3">
               <div className="size-11 rounded-2xl bg-brand-card grid place-items-center text-neutral-900">
-                <LineChart className="size-5" />
+                <FileCheck className="size-5" />
               </div>
-              <div className="text-lg font-semibold text-neutral-900">Get personalised feedback</div>
+              <div className="text-lg font-semibold text-neutral-900">{t('howItWorks.steps.getFeedback.title')}</div>
             </div>
             <p className="mt-4 text-neutral-700 leading-relaxed">
-              After each session, Niel reviews your performance and tells you what to strengthen before your exam.
+              {t('howItWorks.steps.getFeedback.description')}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Niel Academy - Comparison */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('whyNielAcademy.title')}</h2>
+          <p className="mt-5 text-neutral-700 leading-relaxed">
+            {t('whyNielAcademy.description')}
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* General AI Tools */}
+          <div className="rounded-3xl bg-neutral-50 border border-neutral-200/70 p-6">
+            <h3 className="text-xl font-semibold text-neutral-900 mb-4">{t('whyNielAcademy.comparison.general.title')}</h3>
+            <div className="space-y-3">
+              {(['generic explanations', 'no curriculum alignment', 'cannot grade against mark schemes', 'limited context for local exams'] as const).map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="size-5 rounded-full bg-neutral-300 flex items-center justify-center">
+                    <div className="size-2 bg-neutral-600 rounded-full" />
+                  </div>
+                  <span className="text-neutral-700 capitalize">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Niel Academy */}
+          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
+            <h3 className="text-xl font-semibold text-neutral-900 mb-4">{t('whyNielAcademy.comparison.niel.title')}</h3>
+            <div className="space-y-3">
+              {(['GCE syllabus-specific content', 'Official mark scheme grading', 'Adaptive learning based on understanding', 'Built for Cameroon education system'] as const).map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle className="size-5 text-neutral-900" />
+                  <span className="text-neutral-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Grading Engine Workflow */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('gradingEngine.title')}</h2>
+          <p className="mt-5 text-neutral-700 leading-relaxed">
+            {t('gradingEngine.description')}
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="text-center">
+            <div className="size-16 rounded-2xl bg-brand-card mx-auto grid place-items-center text-neutral-900 mb-4">
+              <FileText className="size-7" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">{t('gradingEngine.workflow.step1.title')}</h3>
+            <p className="text-neutral-700 text-sm leading-relaxed">{t('gradingEngine.workflow.step1.description')}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="size-16 rounded-2xl bg-brand-card mx-auto grid place-items-center text-neutral-900 mb-4">
+              <Brain className="size-7" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">{t('gradingEngine.workflow.step2.title')}</h3>
+            <p className="text-neutral-700 text-sm leading-relaxed">{t('gradingEngine.workflow.step2.description')}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="size-16 rounded-2xl bg-brand-card mx-auto grid place-items-center text-neutral-900 mb-4">
+              <FileCheck className="size-7" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">{t('gradingEngine.workflow.step3.title')}</h3>
+            <p className="text-neutral-700 text-sm leading-relaxed">{t('gradingEngine.workflow.step3.description')}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="size-16 rounded-2xl bg-brand-card mx-auto grid place-items-center text-neutral-900 mb-4">
+              <Target className="size-7" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">{t('gradingEngine.workflow.step4.title')}</h3>
+            <p className="text-neutral-700 text-sm leading-relaxed">{t('gradingEngine.workflow.step4.description')}</p>
           </div>
         </div>
       </section>
@@ -124,39 +212,35 @@ export function Home() {
       {/* Learning modes */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Learning modes</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">One app, three ways to learn</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('learningModes.title')}</h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
           <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
             <div className="inline-flex items-center rounded-full bg-brand-background px-3 py-1 text-xs font-semibold text-neutral-800">
-              Understanding Mode
+              {t('learningModes.understanding.label')}
             </div>
-            <h3 className="mt-4 text-xl text-neutral-900">Build problem-solving skills</h3>
+            <h3 className="mt-4 text-xl text-neutral-900">{t('learningModes.understanding.title')}</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Niel guides you to the answer by asking the right questions instead of just giving it to you. You’ll
-              understand the concept, not just the result.
+              {t('learningModes.understanding.description')}
             </p>
           </div>
           <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
             <div className="inline-flex items-center rounded-full bg-brand-card px-3 py-1 text-xs font-semibold text-neutral-800">
-              Guided Mode
+              {t('learningModes.guided.label')}
             </div>
-            <h3 className="mt-4 text-xl text-neutral-900">Step-by-step with explanations</h3>
+            <h3 className="mt-4 text-xl text-neutral-900">{t('learningModes.guided.title')}</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              When you’re stuck, Niel breaks down the question into clear, manageable steps with explanations you
-              can learn from.
+              {t('learningModes.guided.description')}
             </p>
           </div>
           <div className="rounded-3xl border border-neutral-200/70 bg-white/70 p-7">
-            <div className="inline-flex items-center rounded-full bg-brand-primary/15 px-3 py-1 text-xs font-semibold text-neutral-800">
-              Answer Mode
+            <div className="inline-flex items-center rounded-full bg-brand-card px-3 py-1 text-xs font-semibold text-neutral-800">
+              {t('learningModes.answer.label')}
             </div>
-            <h3 className="mt-4 text-xl text-neutral-900">Get a quick answer</h3>
+            <h3 className="mt-4 text-xl text-neutral-900">{t('learningModes.answer.title')}</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Sometimes you just need the answer to keep your momentum going. Answer mode gives it instantly, with
-              context.
+              {t('learningModes.answer.description')}
             </p>
           </div>
         </div>
@@ -164,17 +248,16 @@ export function Home() {
 
       {/* Founder quote */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="rounded-3xl bg-brand-background/60 ">
+        <div className="rounded-3xl bg-brand-background/60 p-8">
           <div className="flex items-start gap-4">
             <div className="size-12 rounded-2xl bg-white/80 border border-neutral-200 grid place-items-center text-neutral-900 shrink-0">
               <MessageSquareQuote className="size-5" />
             </div>
             <div>
               <p className="text-2xl sm:text-3xl text-neutral-900 leading-snug font-serif font-light">
-                “I built the platform I wish I had — a curriculum-aligned AI tutor designed for Cameroonian and
-                African students.”
+                "{t('founder.quote')}"
               </p>
-              <p className="mt-4 text-neutral-700">— Othniel Che, Founder · Niel Academy</p>
+              <p className="mt-4 text-neutral-700">{t('founder.attribution')}</p>
             </div>
           </div>
         </div>
@@ -183,16 +266,11 @@ export function Home() {
       {/* Download CTA */}
       <section id="download" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
         <div className="rounded-3xl bg-neutral-950 text-white overflow-hidden relative">
-          <div className="absolute inset-0 pointer-events-none">
-            {/* <div className="absolute -top-24 -right-24 size-[360px] rounded-full bg-brand-primary/12 blur-2xl" />
-            <div className="absolute -bottom-24 -left-24 size-[360px] rounded-full bg-brand-primary/10 blur-2xl" /> */}
-          </div>
           <div className="relative p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-8">
-              <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Available now</div>
-              <h2 className="mt-3 text-3xl sm:text-4xl">Start learning for free today</h2>
+              <h2 className="text-3xl sm:text-4xl">{t('cta.title')}</h2>
               <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-                Download Niel Academy on Google Play and study with a tutor that follows your curriculum.
+                {t('cta.description')}
               </p>
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">

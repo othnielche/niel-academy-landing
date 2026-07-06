@@ -1,19 +1,17 @@
 import { ShieldCheck, WifiOff, BookOpen, Target, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { site } from "@/lib/site";
 
 export function Parents() {
+  const { t } = useTranslation();
+  
   return (
     <div className="w-full">
       {/* Hero */}
-      <section className="bg-neutral-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-24 -right-24 size-[420px] rounded-full bg-brand-primary/14 blur-2xl" />
-          <div className="absolute -bottom-32 -left-32 size-[520px] rounded-full bg-brand-primary/10 blur-2xl" />
-        </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative">
+      <section className="bg-neutral-950 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-3xl">
-            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">For Parents</div>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl">Give your child the support they deserve.</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl">Give your child the support they deserve.</h1>
             <p className="mt-5 text-white/80 text-lg leading-relaxed">
               We know private tutors are expensive and classrooms are overcrowded. Niel Academy is a trustworthy,
               affordable alternative built specifically for your child’s curriculum.
@@ -30,8 +28,7 @@ export function Parents() {
       {/* What Niel does */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">What Niel Academy does</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">A personal tutor in your child’s pocket</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">A personal tutor in your child’s pocket</h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -76,15 +73,10 @@ export function Parents() {
 
       {/* Cost */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="rounded-3xl bg-black text-white overflow-hidden relative">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-28 -left-28 size-[420px] rounded-full bg-white/6 blur-2xl" />
-            <div className="absolute -bottom-28 -right-28 size-[420px] rounded-full bg-black/10 blur-2xl" />
-          </div>
-          <div className="relative p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="rounded-3xl bg-black text-white overflow-hidden">
+          <div className="p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7">
-              <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Cost</div>
-              <h2 className="mt-3 text-3xl sm:text-4xl">A fraction of traditional tutoring</h2>
+              <h2 className="text-3xl sm:text-4xl">A fraction of traditional tutoring</h2>
               <p className="mt-4 text-white/85 leading-relaxed max-w-xl">
                 Private tutors can be out of reach for many families. Niel Academy makes quality academic support
                 accessible at home every day.
@@ -119,8 +111,7 @@ export function Parents() {
       {/* Concerns */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Common questions</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">We’ve thought about your concerns</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">We’ve thought about your concerns</h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">

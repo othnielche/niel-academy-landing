@@ -1,0 +1,306 @@
+{
+  "navigation": {
+    "home": "Home",
+    "demo": "Demo",
+    "parents": "For Parents", 
+    "mission": "Our Mission",
+    "contact": "Contact",
+    "downloadApp": "Download app"
+  },
+  "demo": {
+    "sectionLabel": "Product Demonstration",
+    "title": "See Niel Academy in action",
+    "description": "Watch how our curriculum-aligned AI tutoring system helps students master GCE concepts through Understanding Mode, Guided Mode, and personalized feedback.",
+    "videos": {
+      "aiTutoring": {
+        "title": "AI Tutoring System",
+        "description": "See how Niel Academy's AI tutor guides students through complex GCE questions, providing curriculum-aligned explanations that build understanding rather than just giving answers."
+      },
+      "understandingMode": {
+        "title": "Understanding Mode",
+        "description": "Watch a student work through a problem in Understanding Mode, where Niel asks strategic questions to guide thinking and build problem-solving skills."
+      },
+      "guidedLearning": {
+        "title": "Guided Learning",
+        "description": "Experience how Guided Mode breaks complex questions into manageable steps, with clear explanations that help students learn the methodology."
+      },
+      "grading": {
+        "title": "Mark Scheme Grading",
+        "description": "See how our grading engine evaluates student answers against official GCE mark schemes, providing detailed feedback and personalized recommendations."
+      }
+    },
+    "features": {
+      "sectionLabel": "Key Features Demonstrated",
+      "title": "What makes Niel Academy different",
+      "curriculumAlignment": {
+        "title": "Curriculum Alignment",
+        "description": "Every explanation and question is mapped to the official GCE syllabus and examination requirements."
+      },
+      "markSchemes": {
+        "title": "Official Mark Schemes",
+        "description": "Grading and feedback based on actual GCE examination mark schemes, not generic rubrics."
+      },
+      "adaptiveLearning": {
+        "title": "Adaptive Learning",
+        "description": "AI that adjusts to your learning style and provides the right level of support for each question."
+      },
+      "progressTracking": {
+        "title": "Progress Tracking", 
+        "description": "Detailed analytics on your performance with personalized recommendations for improvement."
+      }
+    },
+    "cta": {
+      "sectionLabel": "Ready to start?",
+      "title": "Experience curriculum-aligned tutoring",
+      "description": "Download Niel Academy and start studying with AI tutoring designed specifically for GCE preparation."
+    }
+  },
+  "about": {
+    "sectionLabel": "Our Mission & Vision",
+    "title": "Quality learning should be within reach",
+    "description": "Across Sub-Saharan Africa, many classrooms are large and teachers are stretched thin. Niel Academy is building curriculum-aligned support that students can use day-to-day, starting in Cameroon and expanding over time.",
+    "problem": {
+      "sectionLabel": "The problem",
+      "title": "A gap we can close",
+      "description": "Teacher shortages and large class sizes make it hard to give every learner enough attention. UNESCO highlights the scale of the challenge.",
+      "stats": {
+        "teachers": {
+          "number": "15M",
+          "description": "More teachers needed across Sub-Saharan Africa by 2030 to meet quality education goals",
+          "source": "(UNESCO)"
+        },
+        "ratio": {
+          "number": "58:1",
+          "description": "Average pupil-to-trained-teacher ratio at primary level across the region", 
+          "source": "(UNESCO)"
+        },
+        "classSize": {
+          "number": "60-80",
+          "description": "Students per teacher in typical Cameroonian secondary schools",
+          "source": "(Local data)"
+        }
+      }
+    },
+    "founder": {
+      "sectionLabel": "Our story",
+      "title": "Built by someone who understands the challenge",
+      "story": "Othniel Che founded Niel Academy after experiencing firsthand the challenges of learning in under-resourced classrooms. As a software engineer from Mutengene, Cameroon, he built the tutoring system he wished he had as a student - one that understands African curricula and helps students think, not just memorize.",
+      "vision": "Niel Academy begins with Cameroon but is building curriculum-specific AI learning infrastructure for African education systems. We are not just a GCE application - we are developing the foundation for personalized learning across the continent."
+    },
+    "mission": {
+      "title": "Our mission",
+      "description": "To give every African student access to personalized, curriculum-aligned tutoring that builds understanding and prepares them for academic success.",
+      "approach": "We focus on three core principles: curriculum alignment with official syllabi, evidence-based learning through mark scheme grading, and adaptive support that meets students where they are."
+    }
+  },
+  "parents": {
+    "sectionLabel": "For Parents",
+    "title": "Give your child the support they deserve",
+    "description": "We know private tutors are expensive and classrooms are overcrowded. Niel Academy is a trustworthy, affordable alternative built specifically for your child's curriculum.",
+    "whatNielDoes": {
+      "sectionLabel": "What Niel Academy does",
+      "title": "A personal tutor in your child's pocket",
+      "features": {
+        "curriculum": {
+          "title": "Aligned to the GCE curriculum",
+          "description": "Content is built around official past papers so your child isn't studying the wrong material."
+        },
+        "personalized": {
+          "title": "Personalised to their gaps",
+          "description": "After each session, Niel highlights where they struggled and what to review next."
+        },
+        "understanding": {
+          "title": "Builds deeper understanding",
+          "description": "Understanding Mode uses a Socratic approach so students learn to think instead of copying answers."
+        },
+        "offline": {
+          "title": "Works offline too",
+          "description": "Core materials can be downloaded so inconsistent internet doesn't interrupt studying."
+        }
+      }
+    },
+    "cost": {
+      "sectionLabel": "Cost",
+      "title": "A fraction of traditional tutoring",
+      "description": "Private tutors can be out of reach for many families. Niel Academy makes quality academic support accessible at home every day.",
+      "whyAffordability": {
+        "title": "Why affordability matters",
+        "description": "When support is affordable, students get consistent help instead of occasional sessions. That consistency is where confidence and results often improve."
+      },
+      "comparison": {
+        "privateTutor": "Often expensive",
+        "genericAI": "Not built for your exam", 
+        "nielAcademy": "Affordable & localised"
+      }
+    },
+    "concerns": {
+      "sectionLabel": "Common questions",
+      "title": "We've thought about your concerns",
+      "faqs": {
+        "actualLearning": {
+          "question": "Will my child actually learn, or just copy answers?",
+          "answer": "Understanding Mode is designed to prevent passive copying. The AI guides students to reason through problems, and full answers appear when explicitly requested."
+        },
+        "safety": {
+          "question": "Is it safe for my child to use?",
+          "answer": "Niel Academy is strictly an educational tool. It's tuned to stay focused on academic content and be appropriate and encouraging for secondary school students."
+        },
+        "internet": {
+          "question": "My child has limited internet. Will it still work?",
+          "answer": "Yes. Core materials can be downloaded in advance and accessed offline, so studying can continue even when connectivity is unreliable."
+        },
+        "alignment": {
+          "question": "Is it aligned to what their school is teaching?",
+          "answer": "Yes. Content is built directly from official past papers and structured around the same syllabus students follow in school."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to support your child?",
+      "description": "Download Niel Academy and let your child experience personalised learning at home."
+    }
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "title": "Let's talk",
+    "description": "Whether you're a student, parent, school, NGO, or partner, we'd love to hear from you.",
+    "email": {
+      "title": "Email",
+      "description": "Fastest way to reach the team.",
+      "support": "Support",
+      "founder": "Founder"
+    },
+    "social": {
+      "title": "Social",
+      "description": "Updates, announcements, and community."
+    }
+  },
+  "hero": {
+    "headline": "Curriculum-aligned AI tutoring for African students",
+    "subheading": "Niel Academy delivers personalized tutoring based on official examination mark schemes, so every student can master their curriculum and excel in exams.",
+    "watchDemo": "Watch Demo",
+    "ourMission": "Our mission",
+    "features": {
+      "curriculumAligned": {
+        "title": "Curriculum-aligned",
+        "description": "Built around official GCE syllabi and mark schemes."
+      },
+      "threeModes": {
+        "title": "Three learning modes",
+        "description": "Understanding, Guided, or Answer mode."
+      },
+      "personalFeedback": {
+        "title": "Official mark scheme feedback",
+        "description": "Graded against actual examination standards."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionLabel": "How it works",
+    "title": "From question to mastery, step by step",
+    "steps": {
+      "pickPaper": {
+        "title": "Pick your paper",
+        "description": "Browse official GCE past papers organized by subject, year, and examination level."
+      },
+      "chooseMode": {
+        "title": "Choose your learning approach", 
+        "description": "Work through questions in Understanding Mode for deep learning, Guided Mode for step-by-step help, or Answer Mode for quick reference."
+      },
+      "getFeedback": {
+        "title": "Receive mark scheme feedback",
+        "description": "Get detailed feedback based on official examination mark schemes, with specific recommendations for improvement."
+      }
+    }
+  },
+  "whyNielAcademy": {
+    "sectionLabel": "Why Niel Academy?",
+    "title": "Beyond general AI tutoring",
+    "description": "General AI tools provide answers. Niel Academy builds understanding through curriculum-specific tutoring designed for African examination systems.",
+    "comparison": {
+      "general": {
+        "title": "General AI Tools",
+        "features": [
+          "Generic explanations",
+          "No curriculum alignment", 
+          "Cannot grade against mark schemes",
+          "Limited context for local exams"
+        ]
+      },
+      "niel": {
+        "title": "Niel Academy",
+        "features": [
+          "GCE syllabus-specific content",
+          "Official mark scheme grading",
+          "Adaptive learning based on understanding",
+          "Built for Cameroon education system"
+        ]
+      }
+    }
+  },
+  "gradingEngine": {
+    "sectionLabel": "Grading engine",
+    "title": "How your answers are evaluated",
+    "description": "Every response you submit goes through our mark scheme engine, designed to replicate how GCE examiners actually grade papers.",
+    "workflow": {
+      "step1": {
+        "title": "Submit your answer",
+        "description": "Write or photograph your solution to any past paper question."
+      },
+      "step2": {
+        "title": "AI evaluation",
+        "description": "Our system analyzes your work against the official mark scheme."
+      },
+      "step3": {
+        "title": "Detailed feedback",
+        "description": "Receive your mark, corrections, and specific areas for improvement."
+      },
+      "step4": {
+        "title": "Personalized recommendations", 
+        "description": "Get targeted practice questions based on your performance patterns."
+      }
+    }
+  },
+  "learningModes": {
+    "sectionLabel": "Learning modes",
+    "title": "One app, three ways to learn",
+    "understanding": {
+      "label": "Understanding Mode",
+      "title": "Build problem-solving skills", 
+      "description": "Niel guides you to the answer through strategic questions, helping you understand the reasoning process behind each solution."
+    },
+    "guided": {
+      "label": "Guided Mode",
+      "title": "Step-by-step explanations",
+      "description": "When you need structured help, Niel breaks questions into clear stages with detailed explanations at each step."
+    },
+    "answer": {
+      "label": "Answer Mode", 
+      "title": "Quick solution access",
+      "description": "Get immediate access to complete solutions when you need to maintain study momentum or verify your approach."
+    }
+  },
+  "founder": {
+    "quote": "I built the tutoring system I wish I had as a student - one that understands African curricula and helps students think, not just memorize.",
+    "attribution": "— Othniel Che, Founder · Niel Academy"
+  },
+  "cta": {
+    "sectionLabel": "Available now",
+    "title": "Start studying with curriculum-aligned AI",
+    "description": "Download Niel Academy and experience personalized tutoring built specifically for GCE preparation."
+  },
+  "footer": {
+    "tagline": "AI tutoring for African learners",
+    "pages": {
+      "home": "Home",
+      "parents": "For Parents", 
+      "mission": "Our Mission",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2026 Niel Academy. All rights reserved."
+  }
+}

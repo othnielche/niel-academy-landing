@@ -1,24 +1,20 @@
 import { site } from "@/lib/site";
+import { useTranslation } from "react-i18next";
 
 export function About() {
+  const { t } = useTranslation();
+  
   return (
     <div className="w-full">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-0 -left-28 size-[300px] rounded-full bg-brand-primary/8 blur-1xl" />
-          <div className="absolute -bottom-0 -right-28 size-[300PX] rounded-full bg-brand-primary/6 blur-1xl" />
-        </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative">
+      <section>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-3xl">
-            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Our Mission & Vision</div>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl text-neutral-900">
-              Quality learning should be within reach.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral-900">
+              {t('about.title')}
             </h1>
             <p className="mt-5 text-neutral-700 text-lg leading-relaxed">
-              Across Sub-Saharan Africa, many classrooms are large and teachers are stretched thin. Niel Academy is
-              building curriculum-aligned support that students can use day-to-day, starting in Cameroon and
-              expanding over time.
+              {t('about.description')}
             </p>
           </div>
         </div>
@@ -26,215 +22,191 @@ export function About() {
 
       {/* The problem */}
       <section className="mx-auto max-w-7xl px-4 pt-2 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">The problem</div>
-        <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">A gap we can close</h2>
+        <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('about.problem.title')}</h2>
         <div className="mt-5 text-neutral-700 leading-relaxed max-w-3xl">
-          Teacher shortages and large class sizes make it hard to give every learner enough attention. UNESCO
-          highlights the scale of the challenge.
+          {t('about.problem.description')}
         </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="rounded-2xl bg-neutral-950 text-white p-6 border border-white/10">
-            <div className="text-4xl font-semibold tracking-tight">15M</div>
+            <div className="text-4xl font-semibold tracking-tight">{t('about.problem.stats.teachers.number')}</div>
             <p className="mt-2 text-white/80 leading-relaxed">
-              More teachers needed across Sub-Saharan Africa by 2030 to meet quality education goals{" "}
-              <span className="text-white/60">(UNESCO)</span>
+              {t('about.problem.stats.teachers.description')}{" "}
+              <span className="text-white/60">{t('about.problem.stats.teachers.source')}</span>
             </p>
           </div>
 
           <div className="rounded-2xl bg-neutral-950 text-white p-6 border border-white/10">
-            <div className="text-4xl font-semibold tracking-tight">58:1</div>
+            <div className="text-4xl font-semibold tracking-tight">{t('about.problem.stats.ratio.number')}</div>
             <p className="mt-2 text-white/80 leading-relaxed">
-              Average pupil-to-trained-teacher ratio at primary level across the region{" "}
-              <span className="text-white/60">(UNESCO)</span>
+              {t('about.problem.stats.ratio.description')}{" "}
+              <span className="text-white/60">{t('about.problem.stats.ratio.source')}</span>
             </p>
           </div>
 
           <div className="rounded-2xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-4xl font-semibold tracking-tight text-neutral-900">85:1</div>
+            <div className="text-4xl font-semibold tracking-tight text-neutral-900">{t('about.problem.stats.classSize.number')}</div>
             <p className="mt-2 text-neutral-700 leading-relaxed">
-              Students per teacher in some Cameroonian classrooms, which makes individual support very difficult
+              {t('about.problem.stats.classSize.description')}{" "}
+              <span className="text-neutral-600">{t('about.problem.stats.classSize.source')}</span>
             </p>
           </div>
         </div>
+      </section>
 
-        <div className="mt-10 rounded-2xl bg-white/70 border border-neutral-200/70 p-6 md:p-7">
-          <div className="text-lg text-neutral-900">What this means in practice</div>
-          <ul className="mt-3 space-y-2 text-neutral-700 leading-relaxed">
-            <li>Less time for individual questions and feedback.</li>
-            <li>Students who fall behind can stay behind for longer.</li>
-            <li>Families often have to find extra support outside school.</li>
-          </ul>
+      {/* Founder Story - Enhanced */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('about.founder.title')}</h2>
+        </div>
+
+        <div className="mt-10 rounded-3xl bg-white/70 border border-neutral-200/70 p-8 lg:p-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-4">
+              <div className="text-xl text-neutral-900">Othniel Che</div>
+              <div className="mt-1 text-sm text-neutral-600 font-semibold">Founder & Software Engineer</div>
+              <div className="mt-2 text-sm text-neutral-600">Mutengene, Cameroon</div>
+              <a href={`mailto:${site.emails.founderWork}`} className="mt-4 inline-flex text-sm text-neutral-700 hover:text-neutral-900 hover:underline transition-colors">
+                {site.emails.founderWork}
+              </a>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-neutral-700 leading-relaxed">
+                  {t('about.founder.story')}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Vision & Mission - Enhanced */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">The founder</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Built from lived experience</h2>
-        </div>
-
-        <div className="mt-10 rounded-3xl bg-white/70 border border-neutral-200/70 p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-4">
-            <div className="text-xl text-neutral-900">Othniel Che</div>
-            <div className="mt-1 text-sm text-brand-primary font-semibold">Founder & Software Engineer</div>
-            <a href={`mailto:${site.emails.founderWork}`} className="mt-4 inline-flex text-sm text-neutral-700 hover:text-neutral-900 hover:underline transition-colors">
-              {site.emails.founderWork}
-            </a>
-          </div>
-          <div className="lg:col-span-8">
-            <p className="text-neutral-900 text-lg leading-relaxed font-serif font-light">
-              “As a secondary school student in Cameroon, I used platforms like Khan Academy to study after
-              school. While helpful, these tools weren&apos;t built for our curriculum, exams or context. Years
-              later, I watched my younger sister face the same challenges. Very little had changed.”
+        <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-8 lg:p-12">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl sm:text-4xl text-neutral-900">{t('about.mission.title')}</h2>
+            <p className="mt-5 text-lg text-neutral-700 leading-relaxed">
+              {t('about.mission.description')}
             </p>
             <p className="mt-5 text-neutral-700 leading-relaxed">
-              As a software engineer already working with AI, Othniel decided to build the platform he wished he
-              had. Niel Academy is a curriculum-aligned AI tutor designed specifically for Cameroonian and African
-              students, built with pedagogy and affordability at its core.
+              {t('about.mission.approach')}
             </p>
+            
+            {/* Vision Statement */}
+            <div className="mt-8 p-6 rounded-2xl bg-white/80 border border-neutral-200/50">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Our Vision</h3>
+              <p className="text-neutral-700 leading-relaxed">
+                {t('about.founder.vision')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Traction (without usage metrics) */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="rounded-3xl bg-neutral-950 text-white p-10 lg:p-14 relative overflow-hidden">
-          <div className="relative max-w-3xl">
-            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Traction</div>
-            <h2 className="mt-3 text-3xl sm:text-4xl">Early proof it’s working</h2>
-            <p className="mt-4 text-white/80 leading-relaxed">
-              Already in use by students preparing for exams, with feedback guiding what we build next.
-            </p>
-            <ul className="mt-6 space-y-2 text-white/85">
-              <li>Live in Cameroon</li>
-              <li>Built around official past papers</li>
-              <li>Students using it for consistent exam prep</li>
-              <li>Content coverage expanding over time</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Why now */}
+      {/* Positioning as EdTech Company */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Why now</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Why this works now</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">Building education infrastructure for Africa</h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Mobile access is rising</div>
+            <div className="text-lg text-neutral-900">Mobile penetration rising</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Smartphones open a channel to reach learners who were previously hard to support.
+              Smartphones reach students in remote areas where traditional tutoring infrastructure cannot.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">AI makes tutoring affordable</div>
+            <div className="text-lg text-neutral-900">AI enables scale</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Personalised tutoring at scale used to be impossible. Now it can be done responsibly.
+              Curriculum-specific AI tutoring can reach thousands of students simultaneously at affordable cost.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Teacher gaps are widening</div>
+            <div className="text-lg text-neutral-900">Teacher shortage crisis</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              The demand for quality support is outpacing the supply of trained teachers.
+              UNESCO data shows the gap between teacher supply and demand is widening across Sub-Saharan Africa.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Students already use AI</div>
+            <div className="text-lg text-neutral-900">Curriculum specificity matters</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Learners turn to generic tools that aren’t curriculum-aligned. We’re building a better alternative.
+              Generic AI tools miss the mark. Students need tutoring aligned to their actual examination systems.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Roadmap */}
+      {/* Growth Potential */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Roadmap</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">Where we’re going</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">Regional expansion roadmap</h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
-            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Now</div>
-            <h3 className="mt-2 text-xl text-neutral-900">Exam prep for Cameroon GCE</h3>
-            <p className="mt-3 text-neutral-700 leading-relaxed">
-              Live and growing. Students practice official past papers with AI tutoring across core subjects.
+          <div className="rounded-3xl bg-neutral-950 text-white p-7">
+            <h3 className="text-xl">Prove the model</h3>
+            <p className="mt-3 text-white/80 leading-relaxed">
+              Master GCE curriculum alignment, validate AI tutoring effectiveness, and build sustainable unit economics in our home market.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
-            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Next</div>
-            <h3 className="mt-2 text-xl text-neutral-900">Expand coverage</h3>
+            <h3 className="text-xl text-neutral-900">Scale across WAEC countries</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Add more subjects, languages, and national exam boards, including Francophone learners.
+              Expand to Nigeria, Ghana, Sierra Leone, and other WAEC examination systems with similar curriculum structures.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
-            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Future</div>
-            <h3 className="mt-2 text-xl text-neutral-900">A full learning companion</h3>
+            <h3 className="text-xl text-neutral-900">French education systems</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Move beyond exam practice to support the full school curriculum for daily learning, not just revision.
+              Adapt our platform for Baccalauréat and other French-based curricula across Central and West Africa.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-7">
-            <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Vision</div>
-            <h3 className="mt-2 text-xl text-neutral-900">Partnerships at scale</h3>
+            <h3 className="text-xl text-neutral-900">Pan-African platform</h3>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Work with exam boards, NGOs, schools, and governments to expand access sustainably.
+              Become the curriculum-aligned AI tutoring infrastructure for secondary education across Africa.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What we’re seeking */}
+      {/* Partnership & Investment */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">For partners</div>
-          <h2 className="mt-3 text-3xl sm:text-4xl text-neutral-900">What we’re seeking</h2>
+          <h2 className="text-3xl sm:text-4xl text-neutral-900">Building the future of African education</h2>
           <p className="mt-4 text-neutral-700 leading-relaxed">
-            We’re looking for partners who share the belief that every African student deserves a brilliant tutor.
+            We are building education technology infrastructure with the potential to impact millions of students. We seek partners who share this vision.
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Seed funding</div>
+            <div className="text-lg text-neutral-900">Seed funding partners</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Scale content acquisition, curriculum coverage, and infrastructure.
+              Scale curriculum development, expand technical infrastructure, and accelerate market penetration.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Regional expansion</div>
+            <div className="text-lg text-neutral-900">Education institutions</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Support expansion into new countries, exam boards, and languages.
+              Collaborate with exam boards, schools, and universities to ensure curriculum accuracy and institutional adoption.
             </p>
           </div>
           <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Education partnerships</div>
+            <div className="text-lg text-neutral-900">Development organizations</div>
             <p className="mt-3 text-neutral-700 leading-relaxed">
-              Work with NGOs, schools, exam boards, and telcos to broaden access.
-            </p>
-          </div>
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <div className="text-lg text-neutral-900">Responsible AI mentorship</div>
-            <p className="mt-3 text-neutral-700 leading-relaxed">
-              Guidance on scaling AI ethically and effectively in low-resource contexts.
+              Partner with NGOs and multilateral organizations to expand access in underserved communities.
             </p>
           </div>
         </div>
 
         <div className="mt-12 rounded-3xl bg-neutral-950 text-white p-10 lg:p-14 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <div className="text-xs font-semibold tracking-wide text-white/70 uppercase">Get in touch</div>
-            <h2 className="mt-3 text-3xl sm:text-4xl">Let’s build this together</h2>
+            <h2 className="text-3xl sm:text-4xl">Ready to transform African education?</h2>
             <p className="mt-4 text-white/80 leading-relaxed">
-              Whether you’re an investor, NGO, school, or you just believe in the mission, we’d love to hear from
-              you.
+              Whether you are an investor, educator, or organization committed to educational equity, let's discuss how we can work together.
             </p>
           </div>
           <a

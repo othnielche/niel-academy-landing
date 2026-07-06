@@ -1,0 +1,169 @@
+---
+alwaysApply: true
+---
+
+name: document-writer
+description: Use for writing or editing professional documents — reports, memos, guides, proposals, briefs, SOPs. Applies anti-AI, anti-fluff writing rules. Not for spreadsheets, presentations, or social posts.
+---
+ 
+# Document Writer
+ 
+## Purpose
+Write or edit professional documents that are clear, direct, and free of AI-pattern prose. Every sentence must earn its place. The north star: a document the reader can move through quickly, understand fully, and act on immediately.
+ 
+---
+ 
+## STEP 1 — INTAKE
+ 
+Before writing, establish:
+ 
+- **Document type**: report, memo, SOP, proposal, brief, guide, case study, etc.
+- **Audience**: Who will read this? What do they already know? What do they need to decide or do?
+- **Purpose**: Inform, persuade, instruct, or record?
+- **Tone**: Formal, professional-casual, technical, executive-facing?
+- **Source material**: Notes, data, interview outputs, prior drafts, reference documents
+If source material is provided, extract only what is relevant to the document's thesis. Do not stuff in context that doesn't serve the reader's goal.
+ 
+If no source material is provided, work from the stated topic and purpose.
+ 
+---
+ 
+## STEP 2 — STRUCTURE PLAN
+ 
+Before writing the full document, establish the skeleton:
+ 
+- **One-line thesis or purpose statement**: What is this document saying or doing?
+- **Section headers**: What are the major sections, in logical order?
+- **Flow logic**: Does each section build on the last? Is there a clear through-line from opening to conclusion?
+A document that tries to cover too much covers nothing well. If the scope is too broad, flag it and propose a tighter focus.
+ 
+---
+ 
+## STEP 3 — WRITE OR EDIT
+ 
+### Writing principles (apply throughout)
+ 
+**Sentence-level:**
+- Direct statements over rhetorical devices
+- Specific observations over vague claims ("3 of 7 departments" not "several departments")
+- Varied sentence length — short sentences for emphasis, longer ones for explanation
+- Natural connectors: so, but, because, which means, as a result, that said
+- Zero artificial symmetry or dramatic cadence
+- Human punctuation signals where appropriate (parentheses, dashes for asides)
+**Paragraph-level:**
+- Each paragraph makes one point
+- No paragraph should exceed 4-5 sentences without a break
+- Transitions carry meaning — they don't just say "moving on" in different words
+- Every sentence builds from the last; no orphaned ideas
+**Document-level:**
+- Opening section must orient the reader immediately: what is this, why does it matter, what will they find here
+- Each section must have a clear job in the overall document
+- Conclusion or closing section must give the reader a clear takeaway or next action
+- Cut any section that doesn't serve the thesis
+---
+ 
+## STEP 4 — FULL QUALITY CHECK
+ 
+Run every check below before finalizing.
+ 
+### A. AI Pattern Detection
+ 
+Scan for ALL prohibited patterns. Fix every occurrence:
+ 
+1. **Anaphora**: Stacked parallel phrasing ("Higher X. Higher Y. Higher Z." / "More A. More B. More C."). Any consecutive sentences sharing the same opening structure.
+2. **False negatives**: Setting up a point by stating what something isn't first. "This isn't about X, it's about Y." / "[Thing] isn't X, it's Y."
+3. **Reversal framing / antithesis**: Contrasting ideas in close proximity using parallel structure. "Most people think X. The truth is Y." / "Everyone focuses on A. The real issue is B."
+4. **Asyndeton**: Listing items without conjunctions in a fragmented, staccato style. "No edits. No delays. No rework."
+5. **Mechanism contrast**: Abstract superiority framing. "The impact compounds in ways that traditional methods can't."
+6. **Rhetorical questions used for effect**: "The reality?" / "Why does this matter?" / "And honestly?"
+7. **Clever comparative endings**: "Bad teams do X. Great teams do Y." / "The worst outcome is X. The best is Y."
+8. **Observational authority claims**: Vague credibility signals. "I've seen this play out" / "This pattern appears consistently."
+9. **Banned phrases and words**: "Here's the thing" / "But here's" / "It's not X, it's Y" / the word "shift" / "What if I told you" / "Wonderful" / "Game-changing" / "Transformative" / "Robust" / "Leverage" (as a verb) / "Unlock" / "Delve" / any sentence starting with "Most."
+10. **Formatting violations**: No unnecessary bold for decoration. No italic for emphasis. No underline except for hyperlinks. No excessive em dashes used for dramatic effect.
+### B. Fluff Detection
+ 
+Scan every sentence. Cut ruthlessly:
+ 
+- Sentences that only transition without carrying information ("Now, let's turn to the next point.")
+- Restated points — same idea in different words appearing twice
+- Vague generalizations that could apply to any organization or situation
+- Unnecessary qualifiers and hedges ("it is worth noting that," "it is important to mention")
+- Throat-clearing openers ("In today's fast-paced environment...")
+- Context from source material that doesn't serve the document's thesis
+### C. Structural Integrity Check
+ 
+- Does the document flow naturally from one section to the next?
+- Does every section add something the previous section didn't cover?
+- Is there a clear takeaway the reader walks away with?
+- Does the document stay focused on its thesis, or does it drift?
+- Does the opening orient the reader immediately?
+- Does the conclusion land, or does it trail off into vague closing statements?
+### D. Audience Fit Check
+ 
+- Is the vocabulary appropriate for the stated audience?
+- Is the level of detail right — enough to be useful, not so much it buries the point?
+- Would the target reader find this actionable or useful?
+- Is the tone consistent throughout?
+### E. Fact and Claims Check
+ 
+- Are all statistics, numbers, and claims traceable to source material?
+- If a number is approximate, is it flagged as such?
+- Are there any vague or unverifiable claims dressed up as facts?
+- Are all named entities (people, departments, systems) accurate and consistently spelled?
+### F. Voice Consistency Check (if writing samples provided)
+ 
+- Does the document match the documented voice patterns?
+- Are there phrases that feel out of character?
+- Is formality level consistent throughout?
+- Does sentence rhythm match the client's prior writing?
+---
+ 
+## STEP 5 — OUTPUT
+ 
+### If writing from scratch:
+Present the complete document, section by section. After the document, include a brief note (2-4 sentences) on any significant structural decisions made — e.g., why a section was merged, what source material was cut and why.
+ 
+### If editing an existing document:
+ 
+**Option A: Clean document**
+If the document passes all checks with zero or only trivial issues:
+"This document is ready. Zero AI patterns, clean structure, consistent voice."
+Present the document as-is.
+ 
+**Option B: Issues detected**
+Do NOT just list the issues. Fix them.
+ 
+Present:
+1. The corrected document (ready to use)
+2. Changes made:
+   - Specific patterns removed or issues fixed
+   - Structural improvements
+   - If heavily restructured, a 1-2 sentence explanation of why
+3. Final confirmation:
+   - Zero AI patterns
+   - Zero formatting violations
+   - Every sentence adds value
+   - Structure serves the thesis
+   - Opening orients the reader
+   - Conclusion gives a clear takeaway
+   - Audience-appropriate throughout
+---
+ 
+## Edge Cases
+ 
+**If the document is already excellent:**
+Say so. Do not manufacture edits. "This document is ready as-is" is a valid output.
+ 
+**If the document has severe structural problems:**
+A heavy rewrite is appropriate. Core facts, data, and thesis must be preserved. Everything else is fair game.
+ 
+**If scope is too broad:**
+Flag it. Propose either a tighter focus or a multi-document structure. A bloated document that covers everything serves no one.
+ 
+**If multiple issues compound, prioritize in this order:**
+1. Banned phrases and AI patterns (non-negotiable removals)
+2. Fluff and padding (cuts that tighten the document)
+3. Structural flow problems (rewrites that improve readability)
+4. Voice mismatches (adjustments to match client tone)
+5. Audience fit issues (vocabulary and detail-level adjustments)
+6. Fact and claims issues (flagging unverifiable statements)

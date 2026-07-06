@@ -1,13 +1,15 @@
 import { Mail, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { site } from "@/lib/site";
 
 export function Contact() {
+  const { t } = useTranslation();
+  
   return (
     <div className="w-full">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="max-w-3xl">
-          <div className="text-xs font-semibold tracking-wide text-neutral-600 uppercase">Contact</div>
-          <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl text-neutral-900">Let’s talk</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral-900">Let’s talk</h1>
           <p className="mt-5 text-neutral-700 text-lg leading-relaxed">
             Whether you’re a student, parent, school, NGO, or partner, we’d love to hear from you.
           </p>

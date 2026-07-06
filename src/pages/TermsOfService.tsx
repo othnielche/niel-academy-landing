@@ -142,7 +142,7 @@ function TermsOfService() {
                 <hr className="border-neutral-300 my-8" />
               ),
               blockquote: ({ children }) => (
-                <blockquote className="border-l-4 border-brand-primary pl-4 italic text-neutral-600 font-serif font-light">
+                <blockquote className="border-l-4 border-neutral-900 pl-4 italic text-neutral-600 font-serif font-light">
                   {children}
                 </blockquote>
               )
