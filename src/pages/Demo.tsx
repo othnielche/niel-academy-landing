@@ -1,9 +1,6 @@
-import { useTranslation } from 'react-i18next';
 import { Play, Brain, FileCheck, Target, LineChart } from 'lucide-react';
 
 export function Demo() {
-  const { t } = useTranslation();
-
   return (
     <div className="w-full">
       {/* Hero */}

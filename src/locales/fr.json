@@ -218,24 +218,31 @@
     "title": "Au-delà du tutorat IA générique",
     "description": "Les outils IA génériques fournissent des réponses. Niel Academy développe la compréhension à travers un tutorat spécifique aux programmes, conçu pour les systèmes d'examen africains.",
     "comparison": {
-      "general": {
-        "title": "Outils IA Génériques",
-        "features": [
-          "Explications génériques",
-          "Aucun alignement curriculaire",
-          "Ne peut pas noter selon les barèmes",
-          "Contexte limité pour les examens locaux"
-        ]
-      },
-      "niel": {
-        "title": "Niel Academy", 
-        "features": [
-          "Contenu spécifique au syllabus GCE",
-          "Notation selon barème officiel",
-          "Apprentissage adaptatif basé sur la compréhension",
-          "Conçu pour le système éducatif camerounais"
-        ]
-      }
+      "featureColumn": "Fonctionnalité",
+      "generalColumn": "Outils IA Génériques",
+      "nielColumn": "Niel Academy",
+      "rows": [
+        {
+          "feature": "Contenu aligné sur les programmes",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Notation selon barème officiel",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Apprentissage adaptatif basé sur la compréhension",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Conçu pour le système éducatif camerounais",
+          "general": false,
+          "niel": true
+        }
+      ]
     }
   },
   "gradingEngine": {

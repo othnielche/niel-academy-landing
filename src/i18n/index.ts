@@ -24,7 +24,6 @@ i18n
     detection: {
       order: ['path', 'localStorage', 'navigator', 'htmlTag'],
       lookupFromPathIndex: 0,
-      checkWhitelist: true,
     },
 
     interpolation: {

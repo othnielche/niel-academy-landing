@@ -1,10 +1,7 @@
 import { ShieldCheck, WifiOff, BookOpen, Target, Sparkles } from "lucide-react";
-import { useTranslation } from "react-i18next";
 import { site } from "@/lib/site";
 
 export function Parents() {
-  const { t } = useTranslation();
-  
   return (
     <div className="w-full">
       {/* Hero */}

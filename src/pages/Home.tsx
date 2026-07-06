@@ -3,20 +3,43 @@ import { useTranslation } from "react-i18next";
 import {
   Brain,
   FileText,
-  LineChart,
   MessageSquareQuote,
   MoveRight,
   Play,
-  CheckCircle,
-  ArrowRight,
+  Check,
+  X,
   Target,
-  BookOpen,
   FileCheck,
 } from "lucide-react";
 import { site } from "@/lib/site";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
+type ComparisonRow = {
+  feature: string;
+  general: boolean;
+  niel: boolean;
+};
+
+function ComparisonIcon({ supported }: { supported: boolean }) {
+  if (supported) {
+    return <Check className="size-5 text-neutral-900" aria-hidden="true" />;
+  }
+
+  return <X className="size-5 text-neutral-400" aria-hidden="true" />;
+}
 
 export function Home() {
   const { t } = useTranslation();
+  const comparisonRows = t("whyNielAcademy.comparison.rows", {
+    returnObjects: true,
+  }) as ComparisonRow[];
 
   return (
     <div className="w-full">
@@ -134,34 +157,41 @@ export function Home() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* General AI Tools */}
-          <div className="rounded-3xl bg-neutral-50 border border-neutral-200/70 p-6">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-4">{t('whyNielAcademy.comparison.general.title')}</h3>
-            <div className="space-y-3">
-              {(['generic explanations', 'no curriculum alignment', 'cannot grade against mark schemes', 'limited context for local exams'] as const).map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="size-5 rounded-full bg-neutral-300 flex items-center justify-center">
-                    <div className="size-2 bg-neutral-600 rounded-full" />
-                  </div>
-                  <span className="text-neutral-700 capitalize">{feature}</span>
-                </div>
+        <div className="mt-10 rounded-3xl border border-neutral-200/70 bg-white/70 overflow-hidden">
+          <Table>
+            <TableHeader>
+              <TableRow className="hover:bg-transparent">
+                <TableHead className="w-[50%]">
+                  {t("whyNielAcademy.comparison.featureColumn")}
+                </TableHead>
+                <TableHead className="text-center">
+                  {t("whyNielAcademy.comparison.generalColumn")}
+                </TableHead>
+                <TableHead className="text-center bg-brand-card/40">
+                  {t("whyNielAcademy.comparison.nielColumn")}
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {comparisonRows.map((row) => (
+                <TableRow key={row.feature}>
+                  <TableCell className="font-medium text-neutral-900">
+                    {row.feature}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <span className="inline-flex justify-center" aria-label={row.general ? "Yes" : "No"}>
+                      <ComparisonIcon supported={row.general} />
+                    </span>
+                  </TableCell>
+                  <TableCell className="text-center bg-brand-card/20">
+                    <span className="inline-flex justify-center" aria-label={row.niel ? "Yes" : "No"}>
+                      <ComparisonIcon supported={row.niel} />
+                    </span>
+                  </TableCell>
+                </TableRow>
               ))}
-            </div>
-          </div>
-
-          {/* Niel Academy */}
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 p-6">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-4">{t('whyNielAcademy.comparison.niel.title')}</h3>
-            <div className="space-y-3">
-              {(['GCE syllabus-specific content', 'Official mark scheme grading', 'Adaptive learning based on understanding', 'Built for Cameroon education system'] as const).map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="size-5 text-neutral-900" />
-                  <span className="text-neutral-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+            </TableBody>
+          </Table>
         </div>
       </section>
 

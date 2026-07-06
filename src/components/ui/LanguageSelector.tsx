@@ -16,8 +16,6 @@ export function LanguageSelector({ className = '' }: LanguageSelectorProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
-
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);
     
@@ -67,8 +65,6 @@ export function LanguageSelectorCompact({ className = '' }: LanguageSelectorProp
   const { i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);

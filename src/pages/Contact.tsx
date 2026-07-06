@@ -1,10 +1,7 @@
 import { Mail, ArrowUpRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
 import { site } from "@/lib/site";
 
 export function Contact() {
-  const { t } = useTranslation();
-  
   return (
     <div className="w-full">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">

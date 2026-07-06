@@ -31,7 +31,7 @@ export function SEO() {
     languages.forEach(({ code, path }) => {
       const link = document.createElement('link');
       link.rel = 'alternate';
-      link.hrefLang = code;
+      link.setAttribute('hreflang', code);
       link.href = `${baseUrl}${path}`;
       document.head.appendChild(link);
     });

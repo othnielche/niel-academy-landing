@@ -218,24 +218,31 @@
     "title": "Beyond general AI tutoring",
     "description": "General AI tools provide answers. Niel Academy builds understanding through curriculum-specific tutoring designed for African examination systems.",
     "comparison": {
-      "general": {
-        "title": "General AI Tools",
-        "features": [
-          "Generic explanations",
-          "No curriculum alignment", 
-          "Cannot grade against mark schemes",
-          "Limited context for local exams"
-        ]
-      },
-      "niel": {
-        "title": "Niel Academy",
-        "features": [
-          "GCE syllabus-specific content",
-          "Official mark scheme grading",
-          "Adaptive learning based on understanding",
-          "Built for Cameroon education system"
-        ]
-      }
+      "featureColumn": "Feature",
+      "generalColumn": "General AI Tools",
+      "nielColumn": "Niel Academy",
+      "rows": [
+        {
+          "feature": "Curriculum-aligned content",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Official mark scheme grading",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Adaptive learning based on understanding",
+          "general": false,
+          "niel": true
+        },
+        {
+          "feature": "Built for Cameroon education system",
+          "general": false,
+          "niel": true
+        }
+      ]
     }
   },
   "gradingEngine": {
