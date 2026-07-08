@@ -1,9 +1,53 @@
-import { Play, Brain, FileCheck, Target, LineChart } from 'lucide-react';
+import { Brain, FileCheck, Target, LineChart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { YouTubeVideoGrid, type YouTubeVideo } from '@/components/YouTubeVideoGrid';
 import { site } from '@/lib/site';
 
 export function Demo() {
   const { t } = useTranslation();
+
+  const demoVideos: YouTubeVideo[] = [
+    {
+      id: 'practice',
+      youtubeUrl: 'https://youtube.com/shorts/pRScXAdiXic?feature=share',
+      label: t('demo.videos.practice.label'),
+      title: t('demo.videos.practice.title'),
+      description: t('demo.videos.practice.description'),
+      icon: Target,
+    },
+    // {
+    //   id: 'ai-tutoring',
+    //   youtubeUrl: '',
+    //   label: t('demo.videos.aiTutoring.label'),
+    //   title: t('demo.videos.aiTutoring.title'),
+    //   description: t('demo.videos.aiTutoring.description'),
+    //   icon: Brain,
+    // },
+    // {
+    //   id: 'understanding-mode',
+    //   youtubeUrl: '',
+    //   label: t('demo.videos.understandingMode.label'),
+    //   title: t('demo.videos.understandingMode.title'),
+    //   description: t('demo.videos.understandingMode.description'),
+    //   icon: Target,
+    // },
+    // {
+    //   id: 'guided-learning',
+    //   youtubeUrl: '',
+    //   label: t('demo.videos.guidedLearning.label'),
+    //   title: t('demo.videos.guidedLearning.title'),
+    //   description: t('demo.videos.guidedLearning.description'),
+    //   icon: LineChart,
+    // },
+    // {
+    //   id: 'grading',
+    //   youtubeUrl: '',
+    //   label: t('demo.videos.grading.label'),
+    //   title: t('demo.videos.grading.title'),
+    //   description: t('demo.videos.grading.description'),
+    //   icon: FileCheck,
+    // },
+  ];
 
   return (
     <div className="w-full">
@@ -23,97 +67,10 @@ export function Demo() {
 
       {/* Demo Videos Grid */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 lg:pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          {/* Video 1: AI Tutoring Overview */}
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 overflow-hidden">
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
-                  <Play className="size-8 text-neutral-700" />
-                </div>
-                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
-                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.aiTutoring.label')}</p>
-              </div>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Brain className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.aiTutoring.title')}</h3>
-              </div>
-              <p className="text-neutral-700 leading-relaxed">
-                {t('demo.videos.aiTutoring.description')}
-              </p>
-            </div>
-          </div>
-
-          {/* Video 2: Understanding Mode */}
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 overflow-hidden">
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
-                  <Play className="size-8 text-neutral-700" />
-                </div>
-                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
-                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.understandingMode.label')}</p>
-              </div>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Target className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.understandingMode.title')}</h3>
-              </div>
-              <p className="text-neutral-700 leading-relaxed">
-                {t('demo.videos.understandingMode.description')}
-              </p>
-            </div>
-          </div>
-
-          {/* Video 3: Guided Mode */}
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 overflow-hidden">
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
-                  <Play className="size-8 text-neutral-700" />
-                </div>
-                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
-                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.guidedLearning.label')}</p>
-              </div>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <LineChart className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.guidedLearning.title')}</h3>
-              </div>
-              <p className="text-neutral-700 leading-relaxed">
-                {t('demo.videos.guidedLearning.description')}
-              </p>
-            </div>
-          </div>
-
-          {/* Video 4: Automated Grading */}
-          <div className="rounded-3xl bg-white/70 border border-neutral-200/70 overflow-hidden">
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
-                  <Play className="size-8 text-neutral-700" />
-                </div>
-                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
-                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.grading.label')}</p>
-              </div>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <FileCheck className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.grading.title')}</h3>
-              </div>
-              <p className="text-neutral-700 leading-relaxed">
-                {t('demo.videos.grading.description')}
-              </p>
-            </div>
-          </div>
-
-        </div>
+        <YouTubeVideoGrid
+          videos={demoVideos}
+          embedPlaceholder={t('demo.videos.embedPlaceholder')}
+        />
       </section>
 
       {/* Features highlight */}

@@ -13,10 +13,10 @@
     "description": "Regardez comment notre système de tutorat IA aligné sur les programmes aide les étudiants à maîtriser les concepts GCE à travers le Mode Compréhension, le Mode Guidé, et le retour personnalisé.",
     "videos": {
       "embedPlaceholder": "Vidéo YouTube intégrée",
-      "aiTutoring": {
-        "label": "Aperçu du tutorat IA",
-        "title": "Système de Tutorat IA",
-        "description": "Voyez comment le tuteur IA de Niel Academy guide les étudiants à travers des questions GCE complexes, fournissant des explications alignées sur les programmes qui développent la compréhension plutôt que de simplement donner des réponses."
+      "practice": {
+        "label": "Fonctionnalité d'entraînement",
+        "title": "Fonctionnalité d'entraînement",
+        "description": "Voyez comment la fonctionnalité d'entraînement de Niel Academy aide les étudiants à entraîner les questions GCE. Obtenez les réponses notées selon le barème officiel d'examen."
       },
       "understandingMode": {
         "label": "Démo du Mode Compréhension",

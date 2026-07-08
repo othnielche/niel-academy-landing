@@ -13,10 +13,10 @@
     "description": "Watch how our curriculum-aligned AI tutoring system helps students master GCE concepts through Understanding Mode, Guided Mode, and personalized feedback.",
     "videos": {
       "embedPlaceholder": "YouTube Video Embed",
-      "aiTutoring": {
-        "label": "AI Tutoring Overview",
-        "title": "AI Tutoring System",
-        "description": "See how Niel Academy's AI tutor guides students through complex GCE questions, providing curriculum-aligned explanations that build understanding rather than just giving answers."
+      "practice": {
+        "label": "Practice Feature",
+        "title": "Practice Feature",
+        "description": "See how Niel Academy's practice feature helps students practice GCE questions. Get answers marked against an official examination mark scheme."
       },
       "understandingMode": {
         "label": "Understanding Mode Demo",
