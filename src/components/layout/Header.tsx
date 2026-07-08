@@ -123,29 +123,27 @@ export function Header() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-80 bg-brand-background/95 backdrop-blur-md border-l border-neutral-200/80 flex flex-col"
+                className="w-[min(20rem,100vw)] bg-brand-background/95 backdrop-blur-md border-l border-neutral-200/80 flex flex-col gap-0 p-0"
               >
-                <SheetHeader className="pb-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <img
-                        src="/images/logo.png"
-                        alt="Niel Academy logo"
-                        className="size-7 rounded-lg"
-                      />
-                      <div className="leading-tight">
-                        <SheetTitle className="text-base text-neutral-900">
-                          Niel Academy
-                        </SheetTitle>
-                        <p className="text-xs text-neutral-600">
-                          AI tutoring for African learners
-                        </p>
-                      </div>
+                <SheetHeader className="px-5 pt-5 pb-4 pr-12 border-b border-neutral-200/70">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/images/logo.png"
+                      alt="Niel Academy logo"
+                      className="size-8 shrink-0 rounded-lg"
+                    />
+                    <div className="min-w-0 leading-tight">
+                      <SheetTitle className="text-base text-neutral-900">
+                        Niel Academy
+                      </SheetTitle>
+                      <p className="text-xs text-neutral-600">
+                        {t('footer.tagline')}
+                      </p>
                     </div>
                   </div>
                 </SheetHeader>
 
-                <nav className="flex flex-col gap-1 mt-2">
+                <nav className="flex flex-1 flex-col gap-1 px-5 py-4">
                   {navItems.map((item) => {
                     const itemPath = getCurrentPath(item.path);
                     const active = location.pathname === itemPath || 
@@ -155,7 +153,7 @@ export function Header() {
                         key={item.path}
                         to={itemPath}
                         className={[
-                          "rounded-2xl px-4 py-3 text-base transition-colors flex items-center",
+                          "rounded-2xl px-3 py-3 text-base transition-colors",
                           active
                             ? "bg-neutral-900 text-brand-background"
                             : "text-neutral-800 hover:bg-neutral-900/5",
@@ -167,10 +165,8 @@ export function Header() {
                   })}
                 </nav>
 
-                <div className="pt-6 mt-6 border-t border-neutral-200/70 space-y-4">
-                  <div className="flex justify-center">
-                    <LanguageSelectorCompact />
-                  </div>
+                <div className="mt-auto border-t border-neutral-200/70 px-5 py-5 space-y-4">
+                  <LanguageSelectorCompact className="w-full justify-center" />
                   <DownloadCta className="w-full" />
                 </div>
               </SheetContent>
