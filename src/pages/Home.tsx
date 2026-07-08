@@ -4,7 +4,6 @@ import {
   Brain,
   FileText,
   MessageSquareQuote,
-  MoveRight,
   Play,
   Check,
   X,
