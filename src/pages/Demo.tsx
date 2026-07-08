@@ -1,6 +1,10 @@
 import { Play, Brain, FileCheck, Target, LineChart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { site } from '@/lib/site';
 
 export function Demo() {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full">
       {/* Hero */}
@@ -8,10 +12,10 @@ export function Demo() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral-900 tracking-tight">
-              See Niel Academy in action
+              {t('demo.title')}
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-neutral-700 leading-relaxed">
-              Watch how our curriculum-aligned AI tutoring system helps students master GCE concepts through Understanding Mode, Guided Mode, and personalized feedback.
+              {t('demo.description')}
             </p>
           </div>
         </div>
@@ -28,17 +32,17 @@ export function Demo() {
                 <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
                   <Play className="size-8 text-neutral-700" />
                 </div>
-                <p className="text-neutral-600 text-sm">YouTube Video Embed</p>
-                <p className="text-neutral-500 text-xs mt-1">AI Tutoring Overview</p>
+                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
+                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.aiTutoring.label')}</p>
               </div>
             </div>
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3">
                 <Brain className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">AI Tutoring System</h3>
+                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.aiTutoring.title')}</h3>
               </div>
               <p className="text-neutral-700 leading-relaxed">
-                See how Niel Academy's AI tutor guides students through complex GCE questions, providing curriculum-aligned explanations that build understanding rather than just giving answers.
+                {t('demo.videos.aiTutoring.description')}
               </p>
             </div>
           </div>
@@ -50,17 +54,17 @@ export function Demo() {
                 <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
                   <Play className="size-8 text-neutral-700" />
                 </div>
-                <p className="text-neutral-600 text-sm">YouTube Video Embed</p>
-                <p className="text-neutral-500 text-xs mt-1">Understanding Mode Demo</p>
+                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
+                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.understandingMode.label')}</p>
               </div>
             </div>
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3">
                 <Target className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">Understanding Mode</h3>
+                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.understandingMode.title')}</h3>
               </div>
               <p className="text-neutral-700 leading-relaxed">
-                Watch a student work through a problem in Understanding Mode, where Niel asks strategic questions to guide thinking and build problem-solving skills.
+                {t('demo.videos.understandingMode.description')}
               </p>
             </div>
           </div>
@@ -72,17 +76,17 @@ export function Demo() {
                 <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
                   <Play className="size-8 text-neutral-700" />
                 </div>
-                <p className="text-neutral-600 text-sm">YouTube Video Embed</p>
-                <p className="text-neutral-500 text-xs mt-1">Guided Mode Walkthrough</p>
+                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
+                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.guidedLearning.label')}</p>
               </div>
             </div>
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3">
                 <LineChart className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">Guided Learning</h3>
+                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.guidedLearning.title')}</h3>
               </div>
               <p className="text-neutral-700 leading-relaxed">
-                Experience how Guided Mode breaks complex questions into manageable steps, with clear explanations that help students learn the methodology.
+                {t('demo.videos.guidedLearning.description')}
               </p>
             </div>
           </div>
@@ -94,17 +98,17 @@ export function Demo() {
                 <div className="size-16 rounded-full bg-brand-card flex items-center justify-center mx-auto mb-4">
                   <Play className="size-8 text-neutral-700" />
                 </div>
-                <p className="text-neutral-600 text-sm">YouTube Video Embed</p>
-                <p className="text-neutral-500 text-xs mt-1">Grading Engine Demo</p>
+                <p className="text-neutral-600 text-sm">{t('demo.videos.embedPlaceholder')}</p>
+                <p className="text-neutral-500 text-xs mt-1">{t('demo.videos.grading.label')}</p>
               </div>
             </div>
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3">
                 <FileCheck className="size-5 text-neutral-900" />
-                <h3 className="text-xl font-semibold text-neutral-900">Mark Scheme Grading</h3>
+                <h3 className="text-xl font-semibold text-neutral-900">{t('demo.videos.grading.title')}</h3>
               </div>
               <p className="text-neutral-700 leading-relaxed">
-                See how our grading engine evaluates student answers against official GCE mark schemes, providing detailed feedback and personalized recommendations.
+                {t('demo.videos.grading.description')}
               </p>
             </div>
           </div>
@@ -117,7 +121,7 @@ export function Demo() {
         <div className="rounded-3xl bg-brand-background/60 p-8 lg:p-12">
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl text-neutral-900 mb-6">
-              What makes Niel Academy different
+              {t('demo.features.title')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -126,9 +130,9 @@ export function Demo() {
                   <Brain className="size-5 text-neutral-900" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-neutral-900 mb-1">Curriculum Alignment</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-1">{t('demo.features.curriculumAlignment.title')}</h3>
                   <p className="text-neutral-700 text-sm leading-relaxed">
-                    Every explanation and question is mapped to the official GCE syllabus and examination requirements.
+                    {t('demo.features.curriculumAlignment.description')}
                   </p>
                 </div>
               </div>
@@ -138,9 +142,9 @@ export function Demo() {
                   <FileCheck className="size-5 text-neutral-900" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-neutral-900 mb-1">Official Mark Schemes</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-1">{t('demo.features.markSchemes.title')}</h3>
                   <p className="text-neutral-700 text-sm leading-relaxed">
-                    Grading and feedback based on actual GCE examination mark schemes, not generic rubrics.
+                    {t('demo.features.markSchemes.description')}
                   </p>
                 </div>
               </div>
@@ -150,9 +154,9 @@ export function Demo() {
                   <Target className="size-5 text-neutral-900" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-neutral-900 mb-1">Adaptive Learning</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-1">{t('demo.features.adaptiveLearning.title')}</h3>
                   <p className="text-neutral-700 text-sm leading-relaxed">
-                    AI that adjusts to your learning style and provides the right level of support for each question.
+                    {t('demo.features.adaptiveLearning.description')}
                   </p>
                 </div>
               </div>
@@ -162,9 +166,9 @@ export function Demo() {
                   <LineChart className="size-5 text-neutral-900" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-neutral-900 mb-1">Progress Tracking</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-1">{t('demo.features.progressTracking.title')}</h3>
                   <p className="text-neutral-700 text-sm leading-relaxed">
-                    Detailed analytics on your performance with personalized recommendations for improvement.
+                    {t('demo.features.progressTracking.description')}
                   </p>
                 </div>
               </div>
@@ -177,13 +181,13 @@ export function Demo() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
         <div className="rounded-3xl bg-neutral-950 text-white overflow-hidden relative">
           <div className="relative p-10 lg:p-14 text-center">
-            <h2 className="text-3xl sm:text-4xl">Experience curriculum-aligned tutoring</h2>
+            <h2 className="text-3xl sm:text-4xl">{t('demo.cta.title')}</h2>
             <p className="mt-4 text-white/80 leading-relaxed max-w-2xl mx-auto">
-              Download Niel Academy and start studying with AI tutoring designed specifically for GCE preparation.
+              {t('demo.cta.description')}
             </p>
             <div className="mt-8">
               <a 
-                href="https://play.google.com/store/apps/details?id=com.nielacademy" 
+                href={site.playStoreUrl}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex"

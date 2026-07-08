@@ -61,17 +61,17 @@ export function Home() {
                 </a>
                 <Link
                   to="/demo"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-neutral-950 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold  text-neutral-800 px-4 py-2 hover:text-neutral-950 transition-colors hover:border-2 hover:border-brand-card hover:bg-brand-card/10 hover:rounded-full hover:px-4 hover:py-2 hover:animate-pulse"
                 >
                   <Play className="size-4" />
                   {t('hero.watchDemo')}
                 </Link>
-                <Link
+                {/* <Link
                   to="/about"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-neutral-950 transition-colors"
                 >
                   {t('hero.ourMission')} <MoveRight className="size-4" />
-                </Link>
+                </Link> */}
               </div>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl">
